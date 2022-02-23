@@ -3,7 +3,10 @@ const express = require("express");
 const app = express();
 
 const connect = require("./configs/db");
+const searchController = require("./controllers/search.controller");
 
+
+app.post("/search",searchController);
 
 
 

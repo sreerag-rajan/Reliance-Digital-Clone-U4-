@@ -1,3 +1,4 @@
+
 const mongoose = require("mongoose");
 
 module.exports = () => {
@@ -6,3 +7,4 @@ module.exports = () => {
     "mongodb+srv://reliance:reliance_123@reliancedigitalclone.czetg.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
   );
 };
+
