@@ -32,9 +32,9 @@ module.exports = async (req,res)=>{
             let searchTerm = req.query.q;
             products = filteredProds;
 
-            // const category = await Category.findOne().lean().exec()
+            const category = await Category.findOne().lean().exec()
             
-            return res.render("productcatalogfromsearch.ejs",{products, prodcount, searchTerm});
+            return res.render("productcatalogfromsearch.ejs",{products, prodcount, searchTerm, category});
                 
 
         }
