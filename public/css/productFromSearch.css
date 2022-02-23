@@ -100,7 +100,7 @@ h4 {
   width: 18px;
 }
 
-#navbar > a > img {
+#navbar img {
   width: 18px;
 }
 
@@ -188,47 +188,19 @@ h4 {
   color: rgb(31, 73, 133);
   align-content: center;
 }
-
+.prodimg>a>img{
+  width: 90%;
+}
+.prodprice{
+  display: flex;
+  gap: 10px;
+}
+.mrp{
+  text-decoration: line-through;
+}
 #container > div:hover {
   box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
     rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
-}
-
-#container > div > div > img {
-  width: 80%;
-  height: 180px;
-  margin-top: 30px;
-}
-
-#container > div > div:nth-child(1) > div > p {
-  width: 90%;
-  padding-left: 20px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-#container > div > div:nth-child(1) {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  /* justify-content: space-between; */
-  margin: 15px 0px;
-  /* border: 1px solid; */
-}
-
-#container > div > div:nth-child(2) > div {
-  display: flex;
-  gap: 4px;
-  width: 50%;
-  padding: 5px 4.8%;
-  border: 1px solid rgb(190, 190, 190);
-  justify-content: center;
-}
-
-#container > div > div:nth-child(2) {
-  display: flex;
-  flex-direction: row;
 }
 
 .fa-square:before,
@@ -236,6 +208,11 @@ h4 {
   font-size: 20px;
   padding-top: 15px;
 }
+
+#searchedterm{
+  text-transform: uppercase;
+}
+
 
 @media only screen and (min-width: 320px) and (max-width: 426px) {
   #main {

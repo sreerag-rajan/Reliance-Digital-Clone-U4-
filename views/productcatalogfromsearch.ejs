@@ -11,7 +11,7 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../public/css/productFromSearch.css" />
+    <link rel="stylesheet" href="/css/productFromSearch.css" />
     <script
       src="https://kit.fontawesome.com/ed7ed981e3.js"
       crossorigin="anonymous"
@@ -44,7 +44,7 @@
           src="https://www.freeiconspng.com/uploads/right-arrow-icon-27.png"
           alt=""
         />
-        <span>Smartphone</span>
+        <span ><%= searchTerm %></span>
       </div>
 
       <div id="lowerDiv">
@@ -55,7 +55,7 @@
 
           <div id="brand"></div>
           <hr />
-          <h4>Categpry</h4>
+          <h4>Category</h4>
           <div id="category"></div>
           <hr />
           
@@ -63,7 +63,7 @@
 
         <div id="rightPanal">
           <div>
-            <h2>SMARTPHONES</h2>
+            <h2 id="searchedterm"><%= searchTerm %></h2>
             <div id="sortBy">
               <span>Sort by:</span>
               <select id="selectFilter">
@@ -76,19 +76,43 @@
             </div>
           </div>
 
-          <div id="container"></div>
-          <!--  -->
-
-          <div id="bottomsection"></div>
-
-          <!--  -->
+          <div id="container">
+            <% if(products) {%>
+            <%for(prod of products) { %>
+            <div class="product">
+              <div class="prodimg">
+                <a href="<%=prod._id%>">
+                  <img src="<%=prod.main_img%>" alt="">
+                </a>
+              </div>
+              <div class="proddetails">
+                <div class="prodname"><h3><%=prod.name%></h3></div>
+                <div class="prodprice">
+                  <div>₹<%=prod.price%></div>
+                  <% if(prod.MRP) {%>
+                  <div class="mrp">₹<%=prod.MRP%></div>
+                  <%}%>
+                  <% if(prod.discount) {%>
+                  <div><%=prod.discount%>%</div>
+                  <%}%>
+                </div>
+                <% if(prod.discount) {%>
+                <div class="offer">Offer available</div>
+                <%}%>
+              </div>
+            </div>
+            <% } %>
+            <%}%>
+          </div>
         </div>
       </div>
     </div>
+   
+  </body>
+  </html>
+  <script src="/js/productFromSearch.js"></script>
 
-    
-
-<script type="module">
+<!-- <script type="module">
   import { addProducts, showData } from "./scripts/productFromSearch.js";
 
   import mobileDescriptions from "./components/prodCatalogbottom.js";
@@ -235,4 +259,4 @@
     // return filtered_products;
     //Use this returned array and pass it into the display products funtion that you have. THe one that will append the data on the screen
   }
-</script>
+</script> -->
