@@ -1,12 +1,20 @@
+const path = require("path")
 const express = require("express");
 
 const app = express();
 
 const connect = require("./configs/db");
 const searchController = require("./controllers/search.controller");
+const productController = require("./controllers/product.controller");
+const categoryController = require("./controllers/category.controller");
+
+app.use(express.static(path.join(__dirname,'../public')));
+app.use(express.json())
 
 
-app.post("/search",searchController);
+app.get("/search",searchController);
+app.use("/product", productController)
+app.use("/category", categoryController)
 
 
 

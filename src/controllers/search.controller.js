@@ -1,8 +1,9 @@
 const Product = require("../models/product.model")
+const Category = require("../models/category.model")
 
-module.exports = ()=>{
-    return async (req,res)=>{
+module.exports = async (req,res)=>{
         try{
+            
             //Splitting the search terms so that each can be searched for
             const searchterms = req.query.q.split(" ");
             
@@ -27,8 +28,13 @@ module.exports = ()=>{
                     }
                 }
             }
+            let prodcount = filteredProds.length;
+            let searchTerm = req.query.q;
+            products = filteredProds;
+
+            // const category = await Category.findOne().lean().exec()
             
-            return res.render("productcatalogfromsearch.ejs",{filteredProds});
+            return res.render("productcatalogfromsearch.ejs",{products, prodcount, searchTerm});
                 
 
         }
@@ -36,4 +42,3 @@ module.exports = ()=>{
             return res.status(500).send(er.message)
         }
     }
-}
