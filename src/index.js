@@ -9,6 +9,7 @@ const searchController = require("./controllers/search.controller");
 app.post("/search",searchController);
 
 
+
 app.listen(2345,  async ()=>{
     try{
         await connect();
