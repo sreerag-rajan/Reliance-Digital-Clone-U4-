@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
 
 const slideShowSchema = new mongoose.Schema({
-    imageUrl:{type:String,required:true},
+    desc: {type:String, required:true},  //Just add the page name.
+    imageUrl:[{type:String,required:true}],
 
 },{
     versionKey:false,

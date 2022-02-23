@@ -1,23 +1,18 @@
 const mongoose = require('mongoose');
 
 const productSchema = new mongoose.Schema({
-    imageUrl:{type:String,required:true}, //main Image
-    previewUrl:[{type:String,required:true}], // mini images show under other images
-    cartImageUrl:{type:String,required:true}, // for cart and placed order page
-    titles:{type:String,required:true},
-    dealPrice:{type:Number,required:true},
-    retailPrice:{type:Number,required:true},
-    savePrice:{type:Number,required:true},
-    discount:{type:Number,required:true},
-    offerAvailability:{type:Boolean,required:true,default:false},
-    articleId:{type:Number,required:false},
-    description:{type:String,required:false},
-    descriptionImageUrl:{type:String,required:false},
-    specificationType:{type:String,required:false} // i have doubt should i do it nested way or make another Schema
-
-
-
-
+    name: {type:string, required: true},
+    price: {type: Number, required:true},
+    MRP: {type:Number},
+    discount:{type:Number},
+    brand: {type:String, required: true},
+    main_img: {type:String, required:true},  
+    key_features : [{type:String, required:true}],
+    diff_angle_img: [{type:String}],  //THis is for the images shown below the large on on individual product page
+    prod_spec_imgs: [{type:String}], //THe large section below the products which gives the details of it through images
+    prod_spec_html: {type:String}, //Stored as html syntax. TO be used with something like innerHTML
+    category: {type: mongoose.Schema.Types.ObjectId, ref:"category"},
+    stock: {type:Number} //Need in catalog pages
 },{
     versionKey:false,
     timestamps:true,
