@@ -11,7 +11,7 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../public/css/productFromSearch.css" />
+    <link rel="stylesheet" href="/css/productFromSearch.css" />
     <script
       src="https://kit.fontawesome.com/ed7ed981e3.js"
       crossorigin="anonymous"
@@ -44,7 +44,7 @@
           src="https://www.freeiconspng.com/uploads/right-arrow-icon-27.png"
           alt=""
         />
-        <span>Smartphone</span>
+        <span id="searchterm"><%= searchTerm %></span>
       </div>
 
       <div id="lowerDiv">
@@ -52,23 +52,39 @@
           <h4>Filters</h4>
           <hr />
           <h4>Brand</h4>
-
-          <div id="brand"></div>
+          <div id="brand">
+            <%for(brand in brands) {%>
+              <div>
+                <input type="checkbox" name="<%=brand%>" id="<%=brand%>">
+                <label for="<%=brand%>"><%=brand%></label>
+              </div>
+              
+              <% } %>
+          </div>
           <hr />
-          <h4>Categpry</h4>
-          <div id="category"></div>
+          <h4>Category</h4>
+          <div id="category">
+            <%for(cat of categories) {%>
+              <div>
+                <input type="checkbox" name="<%=cat.name%>" id="<%=cat.name%>">
+                <label for="<%=cat.name%>"><%=cat.name%></label>
+              </div>
+              
+              
+              <% } %>
+          </div>
           <hr />
           
         </div>
 
         <div id="rightPanal">
           <div>
-            <h2>SMARTPHONES</h2>
+            <h2 id="searchedterm"><%= searchTerm %></h2>
             <div id="sortBy">
               <span>Sort by:</span>
               <select id="selectFilter">
                 <option value="">Relevance</option>
-                <option value="inc">Name(A-Z)</option>
+                <option onchange="sortfunc()" value="+name">Name(A-Z)</option>
                 <option value="desc">Name(Z-A)</option>
                 <option value="low">Price(Low-High)</option>
                 <option value="high">Price(High-Low)</option>
@@ -76,19 +92,53 @@
             </div>
           </div>
 
-          <div id="container"></div>
-          <!--  -->
-
-          <div id="bottomsection"></div>
-
-          <!--  -->
+          <div id="container">
+            <% if(products) {%>
+            <%for(prod of products) { %>
+            <div class="product">
+              <div class="prodimg">
+                <a href="<%=prod._id%>">
+                  <img src="<%=prod.main_img%>" alt="">
+                </a>
+              </div>
+              <div class="proddetails">
+                <div class="prodname"><h3>></h3></div>
+                <div class="prodprice">
+                  <div>₹<%=prod.price%></div>
+                  <% if(prod.MRP) {%>
+                  <div class="mrp">₹<%=prod.MRP%></div>
+                  <%}%>
+                  <% if(prod.discount) {%>
+                  <div><%=prod.discount%>%</div>
+                  <%}%>
+                </div>
+                <% if(prod.discount) {%>
+                <div class="offer">Offer available</div>
+                <%}%>
+              </div>
+            </div>
+            <% } %>
+            <%}%>
+          </div>
         </div>
       </div>
     </div>
+   <div><%-category.category_specs-%></div>
+  </body>
+  </html>
+  <script src="/js/productFromSearch.js"></script>
+  <script>
+    function sortfunc(){
+      console.log("triggered")
+      let val = document.getElementById("selectFilter").value
+      let st = document.getElementById("searchterm").textContent;
+      window.location.href = `/search?q=${st}&sort=${val}`
+    }
+  </script>
+  
 
-    
 
-<script type="module">
+<!-- <script type="module">
   import { addProducts, showData } from "./scripts/productFromSearch.js";
 
   import mobileDescriptions from "./components/prodCatalogbottom.js";
@@ -235,4 +285,4 @@
     // return filtered_products;
     //Use this returned array and pass it into the display products funtion that you have. THe one that will append the data on the screen
   }
-</script>
+</script> -->
