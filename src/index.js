@@ -10,7 +10,9 @@ const categoryController = require("./controllers/category.controller");
 const imagesController = require("./controllers/images.controller");
 
 app.use(express.static(path.join(__dirname,'../public')));
-app.use(express.json())
+app.use(express.json());
+
+app.set("view engine", "ejs")
 
 
 app.get("/search",searchController);
