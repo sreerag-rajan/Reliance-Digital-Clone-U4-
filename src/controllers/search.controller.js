@@ -28,13 +28,24 @@ module.exports = async (req,res)=>{
                     }
                 }
             }
-            let prodcount = filteredProds.length;
-            let searchTerm = req.query.q;
-            products = filteredProds;
-
-            // const category = await Category.findOne().lean().exec()
+            let category = await Category.findOne().lean().exec()
+            let categories = await Category.find().lean().exec()
+            let brands = {};
+            for(let i =0; i<filteredProds.length;i++){
+                brands[filteredProds[i].brand]=1
+            }
             
-            return res.render("productcatalogfromsearch.ejs",{products, prodcount, searchTerm});
+            
+            let content = {
+                prodcount:filteredProds,
+                searchTerm:req.query.q,
+                products:filteredProds,
+                category: category,
+                categories:categories,
+                brands: brands
+            }
+            
+            return res.render("productcatalogfromsearch.ejs",content);
                 
 
         }

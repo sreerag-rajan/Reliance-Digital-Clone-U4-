@@ -44,7 +44,7 @@
           src="https://www.freeiconspng.com/uploads/right-arrow-icon-27.png"
           alt=""
         />
-        <span ><%= searchTerm %></span>
+        <span id="searchterm"><%= searchTerm %></span>
       </div>
 
       <div id="lowerDiv">
@@ -52,11 +52,27 @@
           <h4>Filters</h4>
           <hr />
           <h4>Brand</h4>
-
-          <div id="brand"></div>
+          <div id="brand">
+            <%for(brand in brands) {%>
+              <div>
+                <input type="checkbox" name="<%=brand%>" id="<%=brand%>">
+                <label for="<%=brand%>"><%=brand%></label>
+              </div>
+              
+              <% } %>
+          </div>
           <hr />
           <h4>Category</h4>
-          <div id="category"></div>
+          <div id="category">
+            <%for(cat of categories) {%>
+              <div>
+                <input type="checkbox" name="<%=cat.name%>" id="<%=cat.name%>">
+                <label for="<%=cat.name%>"><%=cat.name%></label>
+              </div>
+              
+              
+              <% } %>
+          </div>
           <hr />
           
         </div>
@@ -68,7 +84,7 @@
               <span>Sort by:</span>
               <select id="selectFilter">
                 <option value="">Relevance</option>
-                <option value="inc">Name(A-Z)</option>
+                <option onchange="sortfunc()" value="+name">Name(A-Z)</option>
                 <option value="desc">Name(Z-A)</option>
                 <option value="low">Price(Low-High)</option>
                 <option value="high">Price(High-Low)</option>
@@ -86,7 +102,7 @@
                 </a>
               </div>
               <div class="proddetails">
-                <div class="prodname"><h3><%=prod.name%></h3></div>
+                <div class="prodname"><h3>></h3></div>
                 <div class="prodprice">
                   <div>₹<%=prod.price%></div>
                   <% if(prod.MRP) {%>
@@ -107,10 +123,20 @@
         </div>
       </div>
     </div>
-   
+   <div><%-category.category_specs-%></div>
   </body>
   </html>
   <script src="/js/productFromSearch.js"></script>
+  <script>
+    function sortfunc(){
+      console.log("triggered")
+      let val = document.getElementById("selectFilter").value
+      let st = document.getElementById("searchterm").textContent;
+      window.location.href = `/search?q=${st}&sort=${val}`
+    }
+  </script>
+  
+
 
 <!-- <script type="module">
   import { addProducts, showData } from "./scripts/productFromSearch.js";
