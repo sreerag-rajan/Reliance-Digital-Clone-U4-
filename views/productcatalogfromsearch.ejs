@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Buy Smartphones Online at Best Prices</title>
+    <title><%= searchTerm %></title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -19,270 +19,120 @@
   </head>
   <body>
     <header></header>
-    <div id="main">
-      <div id="slideshow">
-        <!-- carousal start -->
-
-        <div id="topCarasoul">
+    <main>
+      <div id="main">
+        <div id="slideshow">
+          <!-- carousal start -->
+  
+          <div id="topCarasoul">
+            <img
+              id="carasolimg"
+              src="https://www.reliancedigital.in/medias/Samsung-Galaxy-Z-Fold3-Flip3-5G-CLP-Banner-10-01-2022.jpg?context=bWFzdGVyfGltYWdlc3wxNjQxMjV8aW1hZ2UvanBlZ3xpbWFnZXMvaDFiL2g4NC85NzU0MDU2MTYzMzU4LmpwZ3xmMzk2ZWEzOWIwOTI2ODk1YjNiNzY1MGI2MDY5ZmJlODJmZTFlMGI4NjYwYjU1ZjE0OTg1YzczMTllYzhiMDk4"
+              alt=""
+            />
+          </div>
+  
+          <!-- carousal end -->
+        </div>
+  
+        <div id="navbar">
+          <a href="/index.html">
+            <img
+              src="https://www.pngkey.com/png/full/823-8236029_senior-care-icon-home-page-icon-grey.png"
+              alt=""
+          /></a>
           <img
-            id="carasolimg"
-            src="https://www.reliancedigital.in/medias/Samsung-Galaxy-Z-Fold3-Flip3-5G-CLP-Banner-10-01-2022.jpg?context=bWFzdGVyfGltYWdlc3wxNjQxMjV8aW1hZ2UvanBlZ3xpbWFnZXMvaDFiL2g4NC85NzU0MDU2MTYzMzU4LmpwZ3xmMzk2ZWEzOWIwOTI2ODk1YjNiNzY1MGI2MDY5ZmJlODJmZTFlMGI4NjYwYjU1ZjE0OTg1YzczMTllYzhiMDk4"
+            src="https://www.freeiconspng.com/uploads/right-arrow-icon-27.png"
             alt=""
           />
+          <span id="searchterm"><%= searchTerm %></span>
         </div>
-
-        <!-- carousal end -->
-      </div>
-
-      <div id="navbar">
-        <a href="/index.html">
-          <img
-            src="https://www.pngkey.com/png/full/823-8236029_senior-care-icon-home-page-icon-grey.png"
-            alt=""
-        /></a>
-        <img
-          src="https://www.freeiconspng.com/uploads/right-arrow-icon-27.png"
-          alt=""
-        />
-        <span id="searchterm"><%= searchTerm %></span>
-      </div>
-
-      <div id="lowerDiv">
-        <div id="sidebar">
-          <h4>Filters</h4>
-          <hr />
-          <h4>Brand</h4>
-          <div id="brand">
-            <%for(brand in brands) {%>
-              <div>
-                <input type="checkbox" name="<%=brand%>" id="<%=brand%>">
-                <label for="<%=brand%>"><%=brand%></label>
-              </div>
-              
-              <% } %>
-          </div>
-          <hr />
-          <h4>Category</h4>
-          <div id="category">
-            <%for(cat of categories) {%>
-              <div>
-                <input type="checkbox" name="<%=cat.name%>" id="<%=cat.name%>">
-                <label for="<%=cat.name%>"><%=cat.name%></label>
-              </div>
-              
-              
-              <% } %>
-          </div>
-          <hr />
-          
-        </div>
-
-        <div id="rightPanal">
-          <div>
-            <h2 id="searchedterm"><%= searchTerm %></h2>
-            <div id="sortBy">
-              <span>Sort by:</span>
-              <select id="selectFilter">
-                <option value="">Relevance</option>
-                <option onchange="sortfunc()" value="+name">Name(A-Z)</option>
-                <option value="desc">Name(Z-A)</option>
-                <option value="low">Price(Low-High)</option>
-                <option value="high">Price(High-Low)</option>
-              </select>
+  
+        <div id="lowerDiv">
+          <div id="sidebar">
+            <h4>Filters</h4>
+            <hr />
+            <h4>Brand</h4>
+            <div id="brand">
+              <%for(brand in brands) {%>
+                <div>
+                  <% if(brand==checked_brand) {%>
+                  <input type="checkbox" checked class="brand" value = "<%=brand%>"name="<%=brand%>" id="<%=brand%>">
+                  <label for="<%=brand%>"><%=brand%></label>
+                  <% } else { %>
+                    <input type="checkbox" class="brand" value = "<%=brand%>"name="<%=brand%>" id="<%=brand%>">
+                    <label for="<%=brand%>"><%=brand%></label>
+                    <%}%>
+                </div>
+                
+                <% } %>
             </div>
+            <hr />
+            <h4>Category</h4>
+            <div id="category">
+              <%for(cat of categories) {%>
+                <div>
+                  <input type="checkbox" name="<%=cat.name%>" id="<%=cat.name%>">
+                  <label for="<%=cat.name%>"><%=cat.name%></label>
+                </div>
+                
+                
+                <% } %>
+            </div>
+            <hr />
+            
           </div>
-
-          <div id="container">
-            <% if(products) {%>
-            <%for(prod of products) { %>
-            <div class="product">
-              <div class="prodimg">
-                <a href="<%=prod._id%>">
-                  <img src="<%=prod.main_img%>" alt="">
-                </a>
+  
+          <div id="rightPanal">
+            <div>
+              <h2 id="searchedterm"><%= searchTerm %></h2>
+              <div id="sortBy">
+                <span>Sort by:</span>
+                <select id="selectFilter">
+                  <option value="">Relevance</option>
+                  <option value="asc">Name(A-Z)</option>
+                  <option value="desc">Name(Z-A)</option>
+                  <option value="low">Price(Low-High)</option>
+                  <option value="high">Price(High-Low)</option>
+                </select>
               </div>
-              <div class="proddetails">
-                <div class="prodname"><h3>></h3></div>
-                <div class="prodprice">
-                  <div>₹<%=prod.price%></div>
-                  <% if(prod.MRP) {%>
-                  <div class="mrp">₹<%=prod.MRP%></div>
-                  <%}%>
+            </div>
+  
+            <div id="container">
+              <% if(products) {%>
+              <%for(prod of products) { %>
+              <div class="product">
+                <div class="prodimg">
+                  <a href="<%=prod._id%>">
+                    <img src="<%=prod.main_img%>" alt="">
+                  </a>
+                </div>
+                <div class="proddetails">
+                  <div class="prodname"><h3><%=prod.name%></h3></div>
+                  <div class="prodprice">
+                    <div>₹<%=prod.price%></div>
+                    <% if(prod.MRP) {%>
+                    <div class="mrp">₹<%=prod.MRP%></div>
+                    <%}%>
+                    <% if(prod.discount) {%>
+                    <div><%=prod.discount%>%(₹<%=prod.MRP-prod.price%>)</div>
+                    <%}%>
+                  </div>
                   <% if(prod.discount) {%>
-                  <div><%=prod.discount%>%</div>
+                  <div class="offer">Offer available</div>
                   <%}%>
                 </div>
-                <% if(prod.discount) {%>
-                <div class="offer">Offer available</div>
-                <%}%>
               </div>
+              <% } %>
+              <%}%>
             </div>
-            <% } %>
-            <%}%>
           </div>
         </div>
       </div>
-    </div>
-   <div><%-category.category_specs-%></div>
+    </main>
+    
+   
   </body>
   </html>
   <script src="/js/productFromSearch.js"></script>
-  <script>
-    function sortfunc(){
-      console.log("triggered")
-      let val = document.getElementById("selectFilter").value
-      let st = document.getElementById("searchterm").textContent;
-      window.location.href = `/search?q=${st}&sort=${val}`
-    }
-  </script>
-  
-
-
-<!-- <script type="module">
-  import { addProducts, showData } from "./scripts/productFromSearch.js";
-
-  import mobileDescriptions from "./components/prodCatalogbottom.js";
-  document.querySelector("#bottomsection").innerHTML = mobileDescriptions();
-
-  import headerFunctionality from "./scripts/header.js";
-  import { header } from "./components/header_footer.js";
-  document.querySelector("header").innerHTML = header();
-  headerFunctionality();
-  let url = "http://127.0.0.1:3000/api/products";
-
-  let res = await addProducts(url);
-  console.log("res", res);
-  let container = document.getElementById("container");
-
-  showData(res, container);
-
-  document
-    .getElementById("selectFilter")
-    .addEventListener("change", function () {
-      console.log("res", res);
-      let selected = document.getElementById("selectFilter").value;
-      console.log("selected:", selected);
-      if (selected == "inc") {
-        res.sort(function (a, b) {
-          if (a.name.toUpperCase() > b.name.toUpperCase()) return 1;
-
-          if (a.name.toUpperCase() < b.name.toUpperCase()) return -1;
-
-          return 0;
-        });
-      }
-
-      if (selected == "desc") {
-        res.sort(function (a, b) {
-          if (a.name.toUpperCase() > b.name.toUpperCase()) return -1;
-
-          if (a.name.toUpperCase() < b.name.toUpperCase()) return 1;
-
-          return 0;
-        });
-        // showData(res, container);
-      }
-
-      if (selected == "low") {
-        res.sort(function (a, b) {
-          return a.price - b.price;
-        });
-        // showData(res, container);
-      }
-
-      if (selected == "high") {
-        res.sort(function (a, b) {
-          return b.price - a.price;
-        });
-        // showData(res, container);
-      }
-      showData(res, container);
-    });
-
-  // //   let res = await fetch("http://127.0.0.1:3000/api/products");
-  //   let products = await res.json();
-  //   console.log(products);
-
-  //The purpose of this function is to go through the database and get all the different filter options and append it to screen
-  function getFilterOptions(items, category, parentId) {
-    let obj = {};
-    for (let i = 0; i < items.length; i++) {
-      obj[items[i][category]] = 1;
-    }
-    console.log(obj);
-    let arr = [];
-    for (let key in obj) {
-      arr.push(key);
-    }
-    let parent = document.getElementById(parentId);
-    parent.innerHTML = null;
-    arr.map((el) => {
-      let ckbox = document.createElement("input");
-      ckbox.type = "checkbox";
-      ckbox.value = el;
-      ckbox.name = el;
-      ckbox.setAttribute("class", `filterckb`);
-      let lb = document.createElement("Label");
-      lb.setAttribute("for", el);
-      lb.textContent = el;
-      let div = document.createElement("div");
-      div.append(ckbox, lb);
-      parent.append(div);
-    });
-  }
-
-  getFilterOptions(res, "brand", "brand");
-  getFilterOptions(res, "color", "color");
-  getFilterOptions(res, "memory", "memory");
-  getFilterOptions(res, "ram", "ram");
-
-  //Here begins the work of filteration. THe array to store the selected options is created below as filterCategoriesArr
-  let filterCategoriesArr = [];
-  //Making it so that the selected values can be captured. Add event listener used here
-  let filcat = document.getElementsByClassName("filterckb");
-  for (let i = 0; i < filcat.length; i++) {
-    filcat[i].addEventListener("change", () => {
-      if (filcat[i].checked) {
-        filterCategoriesArr.push(filcat[i].value);
-      } else {
-        for (let j = 0; j < filterCategoriesArr.length; j++) {
-          if (filcat[i].value === filterCategoriesArr[j]) {
-            filterCategoriesArr.splice(j, 1);
-          }
-        }
-      }
-      console.log(filterCategoriesArr);
-      getFileteredProducts();
-    });
-  }
-
-  //Now the choices have been made. The filtered products need to be fetched. That is happening below
-  function getFileteredProducts() {
-    let arr = filterCategoriesArr;
-    let filtered_products = [];
-    for (let i = 0; i < arr.length; i++) {
-      res.forEach((el) => {
-        //If there are more choices to filter from then they need to be added here as well
-        if (
-          el.brand == arr[i] ||
-          el.memory == arr[i] ||
-          el.color == arr[i] ||
-          el.ram == arr[i]
-        ) {
-          filtered_products.push(el);
-        }
-      });
-    }
-    //Ensuring there is no duplication of products
-    for (let j = 0; j < filtered_products.length; j++) {
-      for (let k = j + 1; k < filtered_products.length; k++) {
-        if (filtered_products[j].id === filtered_products[k].id) {
-          filtered_products.splice(k, 1);
-        }
-      }
-    }
-    showData(filtered_products, container);
-    // return filtered_products;
-    //Use this returned array and pass it into the display products funtion that you have. THe one that will append the data on the screen
-  }
-</script> -->
+ 
