@@ -1,4 +1,3 @@
-const cart = require("../models/cart.model");
 
 exports.addItemToCart = (req, res) => {
 

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reliance Digital Cart</title>
+    <link rel="stylesheet" href="./styles/footer.css">
+    <link rel="stylesheet" href="./styles/header.css">
+    <style>
+        #main{
+            display: flex;
+            gap: 30px;
+            justify-content: space-between;
+        }
+        #main>div:nth-child(2){
+            margin-right: 30px;
+        }
+        #chkt{
+            background-color: #e42529;
+            color: white;
+            width: 95%;
+            height: 40px;
+            border: none;
+            border-radius: 8px;
+            margin: 10px;
+        }
+        #checkout{
+            width: 400px;
+        }
+        #details{
+            border: 1px solid lightgray;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        
+        .bottomDiv button{
+            width: 50%;
+            background-color: white;
+            color: rgb(36, 147, 231);
+            padding: 10px;
+            border: 1px solid lightgray;
+        }
+        .topDiv{
+            display: flex;
+        }
+        .topDiv img{
+            width: 250px;
+        }
+        .topDiv>div:nth-child(2){
+            color: black;
+        }
+        .topDiv>div:nth-child(3){
+            text-align: end;
+        }
+        .topDiv>div:nth-child(3)>p:nth-child(1){
+            font-size: 20px;
+            font-weight: 600;
+        }
+        .bluetext{
+            color: blue;
+        }
+        .greentext{
+            color: green;
+        }
+        .countDiv{
+            display: flex;
+            gap: 20px;
+            font-size: 15px;
+            justify-content: center;
+        }
+        .countDiv>div{
+            border: 1px solid black;
+            padding: 5px 10px;
+        }
+        .countDiv>button{
+            width: 30px;
+            background-color: gainsboro;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .flex{
+            display: flex;
+            justify-content: space-between;
+            margin-right: 20px;
+        }
+        .flex>p:nth-child(2){
+            color: green;
+        }
+        #totamount{
+            display: flex;
+            justify-content: space-between;
+            margin-right: 20px;
+        }
+        #cartLength{
+            color: grey;
+            font-weight: 300;
+        }
+        h3{
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header></header>
+    <div id="main">
+        <div id="left">
+            <h3>My Cart (<span id="cartLength"></span>)</h3>
+            <div id="container"></div>
+        </div>
+
+        <div id="right">
+            <div id="checkout">
+                <div id="btn">
+                    <button id="chkt">CHECKOUT</button>
+                    
+                    <div id="details">
+                        <input type="text" id="Coupon" placeholder="Coupon Code">
+                        <button>Apply</button>
+                        <h4>PRICE DETAILS</h4>
+                        <!-- <h4 id="totamount">AMOUNT PAYABLE</h4> -->
+                        <div class="flex">
+                            <p>Delivery Charges</p>
+                            <p>Free</p>
+                        </div>
+                        
+                        <hr>
+                        <h4 id="totamount">AMOUNT PAYABLE</h4>  
+                    </div>
+                    <div>
+                        <p>Safe and Secure Payments. Easy returns. 100% Authentic products.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+
+    <footer></footer>
+</body>
+</html>
+
+<script type="module">
+
+    import {footer,header} from "./components/header_footer.js"
+    let container=document.querySelector("header")
+    container.innerHTML=header()
+    let foot=document.querySelector("footer")
+    foot.innerHTML=footer()
+
+    import headerFunctionality from "./scripts/header.js"
+    headerFunctionality();
+
+    let items=JSON.parse(localStorage.getItem("relianceCart"))
+
+ console.log(items)
+let cartlength=document.querySelector("#cartLength")
+cartlength.innerText=`${items.length} items`;
+
+
+let totalAmount = 0
+
+function appendcart(items){
+    let parent=document.getElementById("container");
+    parent.innerHTML = "";
+    items.map((el, index)=>{
+        let div1=document.createElement("div")
+        let div2=document.createElement("div")
+        let div3=document.createElement("div")
+        let img=document.createElement("img")
+        
+        img.src=el.image
+        // img.style.width="250px"
+        let countDiv = document.createElement("div")
+        countDiv.setAttribute("class","countDiv")
+        let quantity = document.createElement("div");
+        quantity.setAttribute("class","quantity");
+        let prodquant = 1
+        quantity.textContent = prodquant;
+        let add = document.createElement("button")
+        add.textContent = "+"
+        add.addEventListener("click",()=>{
+             prodquant++;
+             quantity.textContent = prodquant;
+             totalAmount += el.price; 
+             showTotal()         
+        })
+        
+        
+        let sub = document.createElement("button")
+        sub.addEventListener("click",()=>{
+            if(prodquant>1){
+                prodquant--;
+                quantity.textContent = prodquant;
+                totalAmount -= el.price
+                showTotal() 
+            } 
+                   
+        })
+        sub.textContent = "-";
+        countDiv.append(sub,quantity,add);
+        div1.append(img,countDiv)
+        
+        let name=document.createElement("h3")
+        name.innerHTML=el.name
+        div2.append(name);
+        let price=document.createElement("p")
+        price.innerText=`₹${el.price}`
+        let freeshipping=document.createElement("p")
+        freeshipping.setAttribute("class","greentext")
+        freeshipping.innerText="Free Shipping";
+        let p=document.createElement("p")
+        p.setAttribute("class","bluetext")
+        p.innerText="*Delivery assurance is subject to our delivery locations staying open as per govt. regulations";
+        div3.append(price, freeshipping, p);
+        let topdiv = document.createElement("div");
+        topdiv.setAttribute("class", "topDiv")
+        topdiv.append(div1,div2,div3)
+        
+        let btn=document.createElement("button")
+        btn.innerHTML="Remove";
+        btn.addEventListener("click",()=>{
+            removeitem(index);
+        })
+        let btn2=document.createElement("button")
+        btn2.innerHTML="Move to wishlist";
+        btn2.addEventListener("click",()=>{
+            removeitem(index);
+        })
+        let bottomdiv = document.createElement("div");
+        bottomdiv.setAttribute("class","bottomDiv");
+        bottomdiv.append(btn,btn2)
+        let cartProdDiv = document.createElement("div");
+        cartProdDiv.setAttribute("class","cartProdDiv");
+        cartProdDiv.append(topdiv,bottomdiv)
+        totalAmount += (el.price*prodquant)
+
+        parent.append(cartProdDiv)
+
+    })
+}
+appendcart(items)
+
+function showTotal(){
+    let amount=document.getElementById("totamount")
+    amount.innerHTML=`<p>Amount Payable</p> <p>₹${totalAmount}</p>`
+
+}
+showTotal()
+
+function removeitem(index){
+    console.log("Remove")
+            items.splice(index,1);
+            localStorage.setItem("relianceCart",JSON.stringify(items));
+            appendcart(items)
+}
+
+document.querySelector("#chkt").addEventListener("click",()=>{
+    localStorage.setItem("totalAmount", JSON.stringify(totalAmount));
+    window.location.href = "./payment.html"
+})
+
+
+
+
+
+
+
+    
+</script>
