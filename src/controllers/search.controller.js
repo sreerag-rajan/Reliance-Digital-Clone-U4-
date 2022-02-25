@@ -1,14 +1,22 @@
+
+const express = require("express")
 const Product = require("../models/product.model")
 const Category = require("../models/category.model")
 
-module.exports = async (req,res)=>{
+const router = express.Router()
+
+router.get("", async (req,res)=>{
         try{
+            let where = {};
+            if(req.query.brand){
+                where.brand = req.query.brand
+            }
             
-            //Splitting the search terms so that each can be searched for
             const searchterms = req.query.q.split(" ");
             
             //getting all products from database
-            let products = await Product.find().lean().exec();
+            let products = await Product.find().where(where).lean().exec();
+
             
             //filtering the products according to our searched term
             let filteredProds = [];
@@ -28,17 +36,58 @@ module.exports = async (req,res)=>{
                     }
                 }
             }
-            let prodcount = filteredProds.length;
-            let searchTerm = req.query.q;
-            products = filteredProds;
 
-            const category = await Category.findOne().lean().exec()
+
+            //Sorting functinality
+            if(req.query.sort){
+                if(req.query.sort==="asc"){
+                    filteredProds= filteredProds.sort((a,b)=>{
+                        if(a.name.toLowerCase()<b.name.toLowerCase()) return -1;
+                    });
+
+                }
+                else if(req.query.sort ==="desc"){
+                    filteredProds= filteredProds.sort((a,b)=>{
+                        if(a.name.toLowerCase()>b.name.toLowerCase()) return -1;
+                    });
+                }
+                else if(req.query.sort==="low"){
+                    filteredProds= filteredProds.sort((a,b)=>a.price-b.price);
+                }
+                else if(req.query.sort==="high"){
+                    filteredProds= filteredProds.sort((a,b)=> b.price - a.price);
+
+                }
+            }
+
+            //fetching some data for the page
+            let categories = await Category.find().lean().exec()
+            //for sorting out all the brands
+            // let allprods = await Product.find().lean().exec()            
+            let brands = {};
+            for(let i =0; i<filteredProds.length;i++){
+                brands[filteredProds[i].brand]=1   
+            }
             
-            return res.render("productcatalogfromsearch.ejs",{products, prodcount, searchTerm, category});
-                
+            
+            let content = {
+                prodcount:filteredProds,
+                searchTerm:req.query.q,
+                checked_brand: req.query.brand,
+                products:filteredProds,
+                categories:categories,
+                brands: brands
+            }
+            
+            return res.render("productcatalogfromsearch.ejs",content);
+
 
         }
         catch(er){
             return res.status(500).send(er.message)
         }
-    }
+
+    })
+
+module.exports=router
+

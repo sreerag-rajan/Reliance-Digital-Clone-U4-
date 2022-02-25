@@ -3,6 +3,9 @@ const multer = require('multer');
 
 const Category = require("../models/category.model");
 const Images = require("../models/images.model");
+
+const Productrow = require("../models/productrow.model");
+
 // const Product = require("../models/product.model");
 const router = express.Router();
 const upload = multer();
@@ -31,8 +34,15 @@ router.get("/:category", async(req, res)=>{
     try{
         const category = await Category.findOne({name:req.params.category}).lean().exec();
         const images = await Images.find({category:category._id}).lean().exec()
-        return res.status(201).send({category, images});
-        
+
+        const prodrows = await Productrow.find({category:category._id}).populate({path:"products", select:["name","price","MRP","discount","main_img"]}).lean().exec()
+        const content = {
+            category,
+            images,
+            prodrows
+        }
+        return res.status(201).render("productcatalogfromnav.ejs",content);
+
 
     }
     catch(er){

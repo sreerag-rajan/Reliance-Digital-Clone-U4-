@@ -1,10 +1,13 @@
 #header{
     width:100%;
     height: 100px;
+
     background-color: rgb(228,37,41);  
 }
 .logincart img{ 
     height:2px;
+
+
     /* background-color: whitesmoke; */
 }
 .logincart{
@@ -91,6 +94,7 @@
         background-color: rgb(15,74,137);
     }
     
+
     .toggledisp{
         display: none;
     }
@@ -179,6 +183,7 @@
           li{
               font-size: 12px;
           }
+
     }
 
 /* css copied*/
@@ -315,3 +320,4 @@
         .toggledisp>div>div>ul>li{
             margin-bottom: 8px;
         }
+
