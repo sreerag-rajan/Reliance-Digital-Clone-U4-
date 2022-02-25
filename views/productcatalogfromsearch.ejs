@@ -103,7 +103,7 @@
               <%for(prod of products) { %>
               <div class="product">
                 <div class="prodimg">
-                  <a href="<%=prod._id%>">
+                  <a href="product/<%=prod._id%>">
                     <img src="<%=prod.main_img%>" alt="">
                   </a>
                 </div>
@@ -115,7 +115,7 @@
                     <div class="mrp">₹<%=prod.MRP%></div>
                     <%}%>
                     <% if(prod.discount) {%>
-                    <div><%=prod.discount%>%(₹<%=prod.MRP-prod.price%>)</div>
+                    <div class="discount"><%=prod.discount%>%(₹<%=prod.MRP-prod.price%>)</div>
                     <%}%>
                   </div>
                   <% if(prod.discount) {%>

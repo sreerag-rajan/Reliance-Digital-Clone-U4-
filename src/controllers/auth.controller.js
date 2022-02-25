@@ -1,6 +1,10 @@
 require("dotenv").config();
+const express = require("express");
 const jwt = require("jsonwebtoken");
 const User = require("../models/user.model");
+
+const router = express.Router();
+
 
 const newToken = (user) => {
   return jwt.sign({ user }, process.env.JWT_SECRET_KEY);
@@ -8,7 +12,12 @@ const newToken = (user) => {
 
 //crud function for register
 
-const register = async (req, res) => {
+router.get("/register", (req,res)=>{
+  return res.status(200).render("register.ejs");
+})
+
+router.post("/register", async (req, res) => {
+  console.log(req.body);
   let user;
   try {
     // we will try to find the user with the email provided
@@ -27,19 +36,23 @@ const register = async (req, res) => {
     // user.save();
 
     // then we will create the token for that user
-    const token = newToken(user);
+    // const token = newToken(user);
 
     // then return the user and the token
-
-    res.send({ user, token });
+    
+    return res.status(200).redirect("/auth/login");
   } catch (err) {
+    console.log(err.message)
     res.status(500).send(err.message);
   }
-};
-
+}) 
 //crud function for logi
 
-const login = async (req, res) => {
+router.get("/login", (req,res)=>{
+  return res.render("signIn.ejs")
+})
+
+router.post("/login", async (req, res) => {
   try {
     // we will try to find the user with the email provided
     const user = await User.findOne({ email: req.body.email });
@@ -66,6 +79,6 @@ const login = async (req, res) => {
   } catch (err) {
     res.status(500).send(err.message);
   }
-};
+});
 
-module.exports = { register, login, newToken };
+module.exports = router;
