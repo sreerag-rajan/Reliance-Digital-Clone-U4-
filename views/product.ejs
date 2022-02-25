@@ -1,0 +1,1758 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles/indiprductpage.css" />
+    <link rel="stylesheet" href="/styles/header.css">
+    <link rel="stylesheet" href="/styles/footer.css">
+    <script
+      src="https://kit.fontawesome.com/60d90b68f5.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <title>Document</title>
+    <link rel="shortcut icon" type="image" href="/reliance.jpg">
+    <style>
+      body {
+    margin: 0;
+    font-family: 'Roboto';
+    background-color: #FFFFFF;
+    max-width: 100%;
+  }
+  
+  /* section name bar code starts  */
+  #sectionNameBar {
+    display: flex;
+    border: 1px solid #f9f9fa;
+    border-bottom: 1px solid #e0e0e1;
+    height: 18px;
+    padding: 5px 10px;
+    background-color: #f9f9fa;
+    
+  }
+  .fas{
+      color: black;
+      margin-right: 10px;
+  }
+  label{
+      padding: 0px 5px;
+      font-size: 13px;
+      text-align: center;
+  }
+  .brandNamesc{
+      padding: 0px 5px;
+      font-size: 13px;
+      text-align: center;  
+  }
+  /* section name bar code ends  */
+  
+  /* code for Mobile details box starts  */
+  #mobDetailsBox{
+      display: flex;
+      border: none;
+      border-bottom: 1px solid rgba(175, 172, 172, 0.493);
+      height: 800px;
+  }
+  #mobileImages{
+      border: 1px solid white;
+      width: 830px;
+      height: 660px;
+      padding: 0px 15px;
+  }
+  .deviceimage{
+      border: 1px solid white;
+      height: 510px;
+      text-align: center;
+  }
+  .myimage{
+      height: 100%;
+  }
+  .smallimgDiv{
+      border: 1px solid white;
+      height: 120px;
+      margin-top: 25px;
+      display: flex;
+      align-items: center;
+  }
+  .prev{
+    border: 1px solid #ddd;
+    box-shadow: 0px 0px 10px rgba(168, 167, 167, 0.527) ;
+    padding: 32px 8px;
+    font-size: 32px;
+    color: black;
+    
+  }
+  #img1{
+    /* border: 1px solid #FFFFFF; */
+    width: 183px;
+    height: 98px;
+    cursor: pointer;
+    /* margin-left: 1px; */
+  }
+  .smallimgDiv div img{
+    width: 50;
+    height: 100%;
+  }
+  .smallimgDiv div{
+    text-align: center;
+  }
+  
+  .next{
+    border: 1px solid #ddd;
+    box-shadow: 0px 0px 10px rgba(168, 167, 167, 0.527) ;
+    padding: 32px 8px;
+    font-size: 32px;
+    color: black;
+  }
+  #test{
+    border: 1px solid white;
+    width: 130px;
+    height: 80px;
+    text-align: center;
+    margin-top: 1px;
+    border-right:1px solid #ddd;
+  }
+  #playbtn{
+    width:40px;
+    margin-top: 9px;
+    /* border: 1px solid red; */
+  }
+  #vslide{
+    color: #666666;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    margin-top: 0px;
+  }
+  #detailsDiv{
+      border: 1px solid white;
+      width: 1227px;
+      height: 94%;
+      padding: 0px 20px;
+  }
+  #articleID{
+      color: #666666;
+      font-size: 14px;
+  }
+  #deviceName{
+      color: #333333;
+      font-size: 19px;
+      font-weight: bold;
+      letter-spacing: 1px;
+  }
+  .container {
+      display: block;
+      position: relative;
+      padding-left: 35px;
+      margin-bottom: 12px;
+      cursor: pointer;
+      font-size: 22px;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+    
+    /* Hide the browser's default checkbox */
+    .container input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      height: 0;
+      width: 0;
+    }
+    
+    /* Create a custom checkbox */
+    .checkmark {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 16px;
+      width: 16px;
+      border: 1px solid grey;
+      
+    }
+     
+    /* When the checkbox is checked, add a blue background */
+    .container input:checked ~ .checkmark {
+      background-color: navy;
+    }
+    
+    /* Create the checkmark/indicator (hidden when not checked) */
+    .checkmark:after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+    
+    /* Show the checkmark when checked */
+    .container input:checked ~ .checkmark:after {
+      display: block;
+    }
+    
+    /* Style the checkmark/indicator */
+    .container .checkmark:after {
+      left: 5px;
+      top: 1px;
+      width: 3px;
+      height: 8px;
+      border: solid white;
+      border-width: 0 3px 3px 0;
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+    #addComp{
+        font-size: 14px;
+        margin-left: 25px;
+        letter-spacing: 1px;
+        cursor: pointer;
+    }
+    #bar{
+        margin-left: 5px;
+        margin-right: 8px;
+        font-size: 18px;
+    }
+    .share{
+        color: #337AB7;
+        font-size: 18px;
+        margin-right: 5px;
+        cursor: pointer;
+    }
+    #print{
+        color: #337AB7;
+        cursor: pointer;
+    }
+    #hline1{
+        border: none;
+        border-bottom: 1px solid #ddd;
+        margin-top: 20px;
+        margin-bottom: 0px;
+    }
+    #gainMore{
+        font-size: 18px;
+        font-weight: bold;
+    }
+    #offers{
+        color: #585757;
+        word-spacing: 2px;
+        line-height: 28px;
+    }
+    #tc{
+      color: #337AB7;
+    }
+    #tc:hover{
+        cursor: pointer;
+        text-decoration: underline;
+    }
+    #seeMore{
+        font-size: 13px;
+        color: #337AB7;
+        word-spacing: 2px;
+        font-weight: bold;
+    }
+    #seeMore:hover{
+      cursor: pointer;
+      text-decoration: underline;
+    }
+    #saveMore{
+        font-size: 18px;
+        font-weight: bold;
+    }
+    #svtc{
+      color: #337AB7;
+      font-weight: normal;
+      font-size: 14px;
+    }
+    #svtc:hover{
+      cursor: pointer;
+      text-decoration: underline; 
+    }
+    #payOffers{
+      color: #585757;
+      word-spacing: 2px;
+      line-height: 28px;
+      width: 580px;
+    }
+    #viewPlans{
+      color: #337AB7;
+    }
+    #viewPlans:hover{
+      cursor: pointer;
+      text-decoration: underline;
+    }
+    #wrnty{
+        font-weight: bold;
+        color: #585757;
+    }
+    #nrmlFont{
+        font-weight: normal;
+    }
+    #addWaranty{
+      font-size: 18px;
+      font-weight: bold;
+    }
+    #checkbox{
+        border: 1px solid white;
+        display: flex;
+        margin-top: 0px;
+    }
+    #mrpDiv{
+        border: 1px solid white;
+        width: 547px;
+        padding-left: 25px ;
+        border-left:1px solid #ddd;
+        margin-left: 40px;
+    }
+    #price{
+        color: #1F4985;
+        font-weight: bolder;
+        font-size: 26px;
+    }
+    #EMIs{
+        font-size: 15px;
+        font-weight: bold;
+    }
+    #freeShip{
+        font-weight: 900;
+    }
+    #pinCode{
+        border: 1px solid ;
+        border-color: #ddd;
+        width: 380px;
+        height: 26px;
+        border-radius: 4px;
+        padding: 8px 16px;
+        font-size: 16px;
+        margin-top: 25px;
+    }
+    .map{
+        position: absolute;
+        margin-top: 39px;
+        margin-left: 390px;     
+    }
+    #addtoCart{
+        padding: 15px 70px;
+        background-color: #E42529;
+        border: none;
+        border-radius: 4px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        margin-top: 15px;
+        
+    }
+    #addtoCart:hover{
+      background-color: #1F4985;
+      cursor: pointer;
+    }
+    #buyNow{
+      padding: 16px 85px;
+      background-color: #FC6027;
+      border: none;
+      border-radius: 4px;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      margin-top: 15px;
+      margin-left: 15px;
+      cursor: pointer;
+    }
+    #butDiv{
+      display: flex;
+      gap: 15px;
+    }
+    #butDiv div{
+        /* border: 1px solid red; */
+        padding: 12px 0px 0px 15px;
+        color: #333333;
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 1px;
+    }
+    #butDiv div:hover{
+        border-top: 3px solid #337AB7;
+    }
+    #divforFlex{
+        display: flex;
+    }
+    #mobilePhotos{
+      border: 1px solid white;
+      padding: 0px 15px;
+      width: 74%;
+      height: 16575px;
+    }
+    #otherOffers{
+      border: 1px solid white;
+      width: 24%;
+      padding: 0px 15px;
+    }
+    #blktext{
+        font-weight: 900;
+        color: #575757;
+        letter-spacing: 0.5px;
+        line-height: 28px;
+    }
+    #imgone{
+        border: 1px solid white;
+        margin: auto;
+        width: 790px;
+        height: 460px;
+    }
+    #imgone img{
+        width: 100%;
+    }
+    #lillustrationimg{
+        text-align: center;
+        margin-top: 0px;
+        color: #575757;
+    }
+    #imgTwo{
+      border: 1px solid white;
+      margin: auto;
+      width: 790px;
+      height: 470px;
+    }
+    #imgTwo img{
+      width: 100%;
+    }
+    #imgThree{
+      border: 1px solid white;
+      margin: auto;
+      width: 790px;
+      height: 470px;
+      
+    }
+    #imgThree img{
+      width: 100%;
+    }
+    #imgFour{
+      border: 1px solid white;
+      margin: auto;
+      width: 295px;
+      height: 433px;
+      margin-bottom: 5px;
+      
+    }
+    #imgFour img{
+      width: 100%;
+    }
+    #imgFive{
+      border: 1px solid white;
+      margin: auto;
+      width: 1220px;
+      height: 470px;
+      
+    }
+    #imgFive img{
+      width: 100%;  
+    }
+    #imgSix{
+      border: 1px solid white;
+      margin: auto;
+      width: 306px;
+      height: 400px;
+      margin-bottom: 5px;   
+    }
+    #imgSeven{
+      border: 1px solid white;
+      margin: auto;
+      width: 306px;
+      height: 400px;
+      margin-bottom: 5px;   
+    }
+    #imgEight{
+      border: 1px solid white;
+      margin: auto;
+      width: 685px;
+      height: 430px;  
+    }
+    
+    #imgNine{
+      border: 1px solid white;
+      margin: auto;
+      width: 654px;
+      height: 430px;  
+    }
+    #imgTen{
+      border: 1px solid white;
+      margin: auto;
+      width: 675px;
+      height: 430px;  
+    }
+    #imgEleven{
+      border: 1px solid white;
+      margin: auto;
+      width: 420px;
+      height: 460px;  
+    }
+    #imgEleven img{
+      width: 100%;
+      height: 100%
+    }
+    #imgTwelve{
+      border: 1px solid white;
+      margin: auto;
+      width: 415px;
+      height: 450px;  
+      margin-top: 60px;
+  
+    }
+    #imgTwelve img{
+      width: 100%;
+      height: 100%;
+    }
+    #imgThirteen{
+      border: 1px solid white;
+      margin: auto;
+      width: 425px;
+      height: 450px;  
+      margin-top: 60px;
+  
+    }
+    #imgThirteen img{
+      width: 100%;
+      height: 100%;
+    }
+    #imgFourteen{
+      border: 1px solid white;
+      margin: auto;
+      width: 425px;
+      height: 450px;  
+      margin-top: 60px;
+    }
+    #imgFourteen img{
+      width: 100%;
+      height: 100%;
+    }
+    #imgFifthteen{
+      border: 1px solid white;
+      margin: auto;
+      width: 425px;
+      height: 450px;  
+      margin-top: 60px;
+    }
+    #imgFifthteen img{
+      width: 100%;
+      height: 100%;
+    }
+    #imgSixteen{
+      border: 1px solid white;
+      margin: auto;
+      width: 625px;
+      height: 420px;  
+    }
+    #imgSixteen img{
+      width: 100%;
+      height: 100%;
+    }
+    #imgSeventeen{
+      border: 1px solid white;
+      margin: auto;
+      width: 570px;
+      height: 440px;  
+    }
+    #imgSeventeen img{
+      width: 100%;
+      height: 100%;
+    }
+    #imgEighteen{
+      border: 1px solid white;
+      margin: auto;
+      width: 360px;
+      height: 465px;  
+      margin-top: 60px;
+    }
+    #imgEighteen img{
+      width: 100%;
+      height: 100%;
+    }
+    #imgNineteen{
+      border: 1px solid white;
+      margin: auto;
+      width: 570px;
+      height: 440px;  
+    }
+    #imgNineteen img{
+      width: 100%;
+      height: 100%;
+    }
+    #imgTwenty{
+      border: 1px solid white;
+      margin: auto;
+      width: 320px;
+      height: 440px;  
+    }
+    #imgTwenty img{
+      width: 100%;
+      height: 100%;
+    }
+    #imgTwentyone{
+      border: 1px solid white;
+      margin: auto;
+      width: 760px;
+      height: 440px; 
+      margin-top: 60px; 
+    }
+    #imgTwentyone img{
+      width: 100%;
+      height: 100%;
+    }
+    #imgTwentytwo{
+      border: 1px solid white;
+      margin: auto;
+      width: 330px;
+      height: 440px;  
+    }
+    #imgTwentytwo img{
+      width: 100%;
+      height: 100%;
+    }
+    #imgTwentythree{
+      border: 1px solid white;
+      margin: auto;
+      width: 630px;
+      height: 440px;  
+    }
+    #imgTwentythree img{
+      width: 100%;
+      height: 100%;
+    }
+    #imgTwentyfour{
+      border: 1px solid white;
+      margin: auto;
+      width: 730px;
+      height: 440px;  
+    }
+    #imgTwentyfour img{
+      width: 100%;
+      height: 100%;
+    }
+    #imgTwentyfive{
+      border: 1px solid white;
+      margin: auto;
+      width: 590px;
+      height: 440px;  
+    }
+    #imgTwentyfive img{
+      width: 100%;
+      height: 100%;
+    }
+    #imgTwentysix{
+      border: 1px solid white;
+      margin: auto;
+      width: 750px;
+      height: 440px;  
+    }
+    #imgTwentysix img{
+      width: 100%;
+      height: 100%;
+    }
+    #imgTwentyseven{
+      border: 1px solid white;
+      margin: auto;
+      width: 790px;
+      height: 440px;  
+    }
+    #imgTwentyseven img{
+      width: 100%;
+      height: 100%;
+    }
+    #imgTwentyeight{
+      border: 1px solid white;
+      margin: auto;
+      width: 790px;
+      height: 440px;  
+    }
+    #imgTwentyeight img{
+      width: 100%;
+      height: 100%;
+    }
+    #imgTwentynine{
+      border: 1px solid white;
+      margin: auto;
+      width: 690px;
+      height: 440px;  
+    }
+    #imgTwentynine img{
+      width: 100%;
+      height: 100%;
+    }
+    #hline2{
+      border: none;
+      border-bottom: 1px solid #ddd;
+      margin-top: 50px;
+      margin-bottom: 0px;
+    }
+
+    /* side offer bar */
+    #otherOffers{
+      border: 1px solid white;
+    }
+    #offertitle{
+      padding: 12px 16px;
+      background-color: #EFEFEF;
+      text-align: center;
+      font-weight: 600;
+      font-size: 20px;
+      color: #333333;
+      letter-spacing: 1px;
+      word-spacing: 1.5px;
+    }
+    #offersrand{
+      border: 1px solid #EFEFEF;
+      margin-top: 10px;
+      padding: 0px 25px 25px;
+      
+    }
+    #adjoffimg{
+      text-align: center;
+    }
+    #greytext{
+      color: #666666;
+      line-height: 5px;
+    }
+    #bigbcktxt{
+      font-size: 18px;
+      color: #000000;
+      font-weight: bold;
+      margin-left: 10px;
+    }
+    #dashtxt{
+      text-decoration:line-through;
+    }
+
+    /* specification detailed code start here */
+    #leftmarginspecdiv{
+        margin-left: 20px;
+        border: 1px solid white;
+        margin-top: 0px;
+        /* border-bottom: 1px solid #ddd; */
+        
+    }
+     
+    #gInfoDiv{
+      display: flex;  
+
+    }
+    #detailblktext{
+        font-size: 17px;
+        font-weight: bold;
+        color: #575757;
+        line-height: 0px;
+        
+    }
+    #details{
+        display: flex;
+        border: 1px solid white;
+    }
+    #key{
+        border: 1px solid white;
+        width: 790px;
+        color: #575757;
+        font-size: 17px;
+        line-height: 18px;
+
+    }
+    #value{
+        border: 1px solid white;
+        /* margin-left: 750px; */
+        color: #575757;
+        line-height: 18px;
+        font-size: 17px;
+    }
+    #lesslinegap{
+        line-height: 5px;
+    }
+    #wrntyGap{
+        margin-top: 55px;
+    }
+    #ccphone{
+        margin-top: 23px;
+        margin-bottom: 0px;
+    }
+    #adrsimporter{
+        margin-top: 70px;
+    }
+    #lesslinegapE{
+        line-height: 5px;
+        margin-top: 25px;
+    }
+    #lesslinegaped{
+        line-height: 8px;
+    }
+    #customerRev{
+        display: flex;
+    }
+    #cstrevtag{
+        margin-left: 20px;
+        font-weight: bold;
+        font-size: 24px;
+        letter-spacing: 1px;
+        color: #333333;
+        margin-top: 43px;
+    }
+    #writerevbtn{
+        padding: 0px 12px;
+        height: 40px;
+        margin-top: 40px;
+        margin-left: 40px;
+        background-color: white;
+        border-radius: 4px;
+        border-color: #E42529;
+        color: #E42529;
+        font-weight: bold;
+
+    }
+    #writerevbtn:hover{
+        cursor: pointer;
+        color: #FC6027;
+        border-color: #FC6027;
+    }
+    #detailSpec{
+        font-size: 22px;
+        font-weight: 500;
+        color: #333333;
+        margin-top: 0px;
+    }
+    .blktext{
+        font-weight: 900;
+        color: #575757;
+        letter-spacing: 0.5px;
+        line-height: 28px;
+    }
+  
+    .line-through{
+      text-decoration: line-through;
+    }
+
+    .smallText{
+      font-size: 70%;
+    }
+
+    .green{
+      color:green
+    }
+  
+  
+  /* code for Mobile details box ends  */
+  
+    </style>
+  </head>
+  <body>
+    <header></header>
+    <div id="main">
+      <!-- section name bar code starts -->
+      <div id="sectionNameBar">
+        <a href=""><i class="fas fa-home-alt"></i></a>
+        <label>></label>
+        <label>Mobiles & Tablets</label>
+        <label>></label>
+        <label>Smart Phones</label>
+        <label>></label>
+        <lable id="brandNamesc" class="brandNamesc"></lable>
+        <label>></label>
+        <label id="deviceNamesc" class="deviceNamesc"></label>
+      </div>
+      <!-- section name bar code ends -->
+
+      <!-- code for Mobile images start -->
+      <div id="mobDetailsBox">
+        <div id="mobileImages">
+            <div id="deviceimage" class="deviceimage">
+                <img id="myimage" class="myimage" src="<%=product.main_img%>" alt="">
+            </div>
+
+            <div class="smallimgDiv">
+              <div><a class="prev" onclick="plusSlides(-1)">&#10094;</a></div>
+              <div id="img1"><img id="getsrc1" src="<%=product.diff_angle_img[0]%>" alt=""></div>
+              <div id="img1"><img id="getsrc"  src="<%=product.diff_angle_img[1]%>" alt=""></div>
+              <div id="img1"><img id="getsrc3" src="<%=product.diff_angle_img[2]%>" alt=""></div>
+              <div id="img1"><img id="getsrc4" src="<%=product.diff_angle_img[3]%>" alt=""></div>
+              <div><a class="next" onclick="plusSlides(1)">&#10095;</a></div>
+            </div>
+
+            <div id="test">
+              <img id="playbtn" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSlojdSR98shU2rsMIV8x5T7MkGlLQQ2GQfRvn4NY4ifjSsUKMM" alt="">
+              <p id="vslide">View Slideshow</p>
+            </div>
+        </div>
+
+
+        <div id="detailsDiv">
+          <p id="articleID">Article ID: 491996840</p>
+          <p id="deviceName"><%=product.name%></p>
+          <label class="container">
+            <input type="checkbox" />
+            <span class="checkmark"></span>
+          </label>
+          <label id="addComp"
+            >Add to Compare <span id="bar">|</span
+            ><span><i class="fas fa-share-alt share"></i></span
+            ><span id="bar">|</span
+            ><span id="print"
+              ><i class="fas fa-print share"></i>Print</span
+            ></label
+          >
+          <hr id="hline1" />
+
+          <div id="checkbox">
+            <!-- Gain more with offers div -->
+            <div>
+              <div>
+                <p id="gainMore">Gain more with offers (5)</p>
+                <ul id="offers">
+                  <li>
+                    Up to Rs 5000 instant discount with HDFC Bank Credit
+                    Cards.<span id="tc"> T&C</span>
+                  </li>
+                  <li>
+                    10% Cashback on EMI transactions with ZestMoney.<span
+                      id="tc"
+                    >
+                      T&C</span
+                    >
+                  </li>
+                  <li>
+                    Get up to Rs 350 cashback from Mobikwik.<span id="tc">
+                      T&C</span
+                    >
+                  </li>
+                  <li>
+                    10% Cashback with OneCard Credit Cards.<span id="tc">
+                      T&C</span
+                    >
+                  </li>
+                </ul>
+                <p id="seeMore">See more >></p>
+              </div>
+
+              <!-- save more with emi div -->
+              <div>
+                <p id="saveMore">
+                  Save more with EMI/Cashback (3) <span id="svtc"> T&C</span>
+                </p>
+                <ul id="payOffers">
+                  <li>
+                    Credit Card No-Cost EMI Options.<span id="viewPlans">
+                      View Plans</span
+                    >
+                  </li>
+                  <li>
+                    Debit Card No-Cost EMI Options.<span id="viewPlans"
+                      >View Plans</span
+                    >
+                  </li>
+                  <li>
+                    EMIs (Credit Cards) from ₹1318.01/month <span> |</span>
+                    <span id="viewPlans">
+                      View all Standard Credit Cards EMI options</span
+                    >
+                  </li>
+                  <li id="wrnty">
+                    Warranty:
+                    <span id="nrmlFont"> 1 Year manufacturer warranty</span>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Additional services and waranty -->
+              <div>
+                <p id="addWaranty">
+                  Additional Services & Warranties (5)<span
+                    style="color: #337ab7" id="viewPlans"
+                  >
+                    View All</span
+                  >
+                </p>
+                <p id="addWaranty">Key Features</p>
+                <ul id="keyFeatures">
+                  <li><%=product.key_features[0]%></li>
+                  <li><%=product.key_features[1]%></li>
+                  <li><%=product.key_features[2]%></li>
+                  <li><%=product.key_features[3]%></li>
+                  <li><%=product.key_features[4]%></li>
+                  
+                  
+                </ul>
+                <p id="addWaranty">
+                  Got Feedback to share on this page?
+                  <span style="color: #337ab7; font-size: 16px" id="viewPlans">
+                    report here.</span
+                  >
+                </p>
+              </div>
+            </div>
+
+            <!-- MRP section and shipping -->
+            <div id="mrpDiv">
+              <p id="mrp"><span id="price">₹<span id="mainPrice"></span><span><%=product.price%>.00</span></p>
+              <p class = "line-through">MRP:₹<%=product.MRP%>.00</p>
+              <p class="smallText">(Inclusive of all taxes)</p>
+              <p class="green">You Save:<%=product.discount%>% (₹<%=(product.MRP - product.price)%>)</p>
+
+              <p id="freeShip">FREE SHIPPING!</p>
+              <i class="fas fa-map-marker-alt map"></i>
+              <input type="text" placeholder="PIN Code" id="pinCode" /><br>
+              <p id="pinalert">Please enter a valid pincode</p>
+              <div>
+                  <button id="addtoCart">ADD TO CART</button><button id="buyNow">BUY NOW</button>
+              </div>
+              
+            </div>
+          </div>
+
+          <div></div>
+        </div>
+      </div>
+
+      <!-- mobile detials and description code  -->
+      <div>
+          <!-- description specification cust rew code div -->
+          <div id="butDiv">
+              <div>Description</div>
+              <div>specification</div>
+              <div>Customer Reviews</div>
+          </div>
+
+          <div id="divforFlex">
+              <div id="mobilePhotos">
+                  <p id="blktext">Fastest Android Phone</p>
+                  <p id="blktext">A little more than you'd expect.</p>
+                  <div id="imgone">
+                      <img src="https://www.reliancedigital.in/medias/OnePlus-Nord-CE-5G-Smartphone-32?context=bWFzdGVyfGltYWdlc3w0MDI0NXxpbWFnZS9qcGVnfGltYWdlcy9oZDQvaGM2Lzk1Njg3Mzc2ODk2MzAuanBnfGJkNjQ1ZTA2ODQ1ZjU5MTViODNjZTkwYzk4YzU0N2VkNjY0ZTYyYTU2ZWRlZTlmN2E3NzhlOWNmODI0MmNmZTU" alt="">
+                      <p id="lillustrationimg">* This Android Smartphone image is for illustration purpose only. Actual image may vary.</p>
+                  </div>
+                  <p id="blktext">Warp Charge 30T Plus + 4500mAh¹ battery</p>
+                  <p id="cameras" class="blktext">64 MP triple camera</p>
+                  <p id="blktext">90 Hz AMOLED display</p>
+                  <p id="processors" class="blktext" ></p>
+                  <p id="blktext">5G-ready</p>
+                  <p id="ossystems" class="blktext"></p>
+                  <p id="blktext">NORD TO THE CORE</p>
+                  <div id="imgTwo">
+                    <img src="https://www.reliancedigital.in/medias/OnePlus-Nord-CE-5G-Smartphone-24?context=bWFzdGVyfGltYWdlc3w1NDIxfGltYWdlL2pwZWd8aW1hZ2VzL2hhZC9oYTYvOTU2ODczODYzOTkwMi5qcGd8MzFlZTcyY2YwZDIxMDY5NDljYjE5NGE1ODYxYmI5YmNiY2JiYmNmNmFlNGJkNmFlMzgxMzgzYzg5ZWVlMGY1MQ" alt="">
+                    <p id="lillustrationimg">* This Android Smartphone image is for illustration purpose only. Actual image may vary.</p>
+                  </div>
+                  <p id="blktext">A little lighter.</p>
+                  <p>170 g</p>
+                  <p id="blktext">A little thinner.</p>
+                  <p>7.9mm</p>
+                  <p id="blktext">A little more jacked.</p>
+                  <p>3.5mm</p>
+                  <div id="imgThree">
+                    <img src="https://www.reliancedigital.in/medias/OnePlus-Nord-CE-5G-Smartphone-25?context=bWFzdGVyfGltYWdlc3w1NjY3fGltYWdlL2pwZWd8aW1hZ2VzL2gzYy9oZmYvOTU2ODczNzk1MTc3NC5qcGd8NzYzYTQxMmY4OWRhYTg3Yzg3Y2RlN2VjMDlkZmM0ZWJlYTNlY2RkMTMxZDhjY2MwZGU2ZTYzNmRkYmY3YjNkNw" alt="">
+                    <p id="lillustrationimg">* This Android Smartphone image is for illustration purpose only. Actual image may vary.</p>
+                  </div>
+                  <p>Silver Ray</p>
+                  
+                  <div id="imgFour">
+                    <img src="https://www.reliancedigital.in/medias/OnePlus-Nord-CE-5G-Smartphone-28?context=bWFzdGVyfGltYWdlc3w4NDUzfGltYWdlL2pwZWd8aW1hZ2VzL2hjZC9oMzIvOTU2ODczNzU1ODU1OC5qcGd8NmRlYWVkMDRjMmRiNzVlNDc1ODdjZWE2ZWIzNjk1OTJlMTQ2MDI4OGU4ZjcwMmIzZWE5YjE4Nzk2YzZiY2FlOQ" alt="">
+                  </div>
+                  <p id="lillustrationimg">* This Android Smartphone image is for illustration purpose only. Actual image may vary.</p>
+                  
+                  <p id="blktext">MORE LIFE.</p>
+                  <p id="blktext">MORE WARP.</p>
+                  <div id="imgFive">
+                    <img src="https://www.reliancedigital.in/medias/OnePlus-Nord-CE-5G-Smartphone-29?context=bWFzdGVyfGltYWdlc3wzNzkyN3xpbWFnZS9qcGVnfGltYWdlcy9oNDQvaGZjLzk1Njg3Mzg2MDcxMzQuanBnfDU5NGYyN2ViMDE1ZTRjNTYwZDBmYjBjMTNhZTIxN2NkNGVlMzAwZjhjM2EwZWFjZThjZTZmZDdkY2MyNTBmMjA" alt="">
+                    <p id="lillustrationimg">* This Android Smartphone image is for illustration purpose only. Actual image may vary.</p>
+                  </div>
+                  
+                  <p id="blktext">Time flies with Warp Charge 30T Plus.</p>
+                  <p>A bigger battery deserves an even better charger. Warp Charge 30T Plus improves power transfer to bring Nord CE’s large-capacity battery from 0 to 70% in just 30 minutes.</p>
+                  
+                  <div id="imgSix">
+                    <img src="https://www.reliancedigital.in/medias/OnePlus-Nord-CE-5G-Smartphone-30?context=bWFzdGVyfGltYWdlc3wyMjkwOXxpbWFnZS9qcGVnfGltYWdlcy9oOTcvaDBiLzk1Njg3Mzc5ODQ1NDIuanBnfDVkZWY3YzhiNmY5ZGFmOTc2YzUyMmVhYzhlZWVjZjc4ODE3N2ExZTNmNjg1OGRiOGEzYzE5MzU3OTg2Yjk1MDA" alt="">
+                  </div>
+                  <p id="lillustrationimg">* This Android Smartphone image is for illustration purpose only. Actual image may vary.</p>
+
+                  <p id="blktext"> Hold on to your power</p>
+                  <p>Nord CE 5G packs a massive 4500mAh battery, which means your phone stays powered longer.</p>
+
+                  <div id="imgSeven">
+                    <img src="https://www.reliancedigital.in/medias/OnePlus-Nord-CE-5G-Smartphone-31?context=bWFzdGVyfGltYWdlc3wyNDM4MnxpbWFnZS9qcGVnfGltYWdlcy9oYzMvaDllLzk1Njg3Mzg5Njc1ODIuanBnfDNiNjdjOWNlMTMyN2I3NGEwOTVmZDFkM2E2N2MxMjcwZmE2YWJjNTI4NjliYjc1ZGViZTBmOGVjMjVhYTg4Yjc" alt="">
+                  </div>
+                  <p id="lillustrationimg">* This Android Smartphone image is for illustration purpose only. Actual image may vary.</p>
+
+                  <p id="blktext">SHOOT FOR PERFECTION</p>
+
+                  <div id="imgEight">
+                    <img src="https://www.reliancedigital.in/medias/OnePlus-Nord-CE-5G-Smartphone-33?context=bWFzdGVyfGltYWdlc3wxODQ3NHxpbWFnZS9qcGVnfGltYWdlcy9oNmEvaGZiLzk1Njg3MzgxMTU2MTQuanBnfDk1NjZmNGFjYTBjZmNmOTZjZDMwM2RhMmE0NWUwNzY4OWI3NzU0MTdlZTZhNTAxYzlhZTAyZTE5MzNiN2FiZjU" alt="">
+                    <p id="lillustrationimg">* This Android Smartphone image is for illustration purpose only. Actual image may vary.</p>
+                  </div>
+
+                  <p id="blktext">Shoot vertically. Horizontally. Exceptionally.</p>
+                  <p>Nord CE 5G features a triple camera setup, including a high-res 64 MP main camera (16 MP more than the original Nord). The main camera’s large f/1.79 aperture help you capture more light and detail, even in low light situations.</p>
+
+                  <div id="imgNine">
+                    <img src="https://www.reliancedigital.in/medias/OnePlus-Nord-CE-5G-Smartphone-34?context=bWFzdGVyfGltYWdlc3wzOTAyOHxpbWFnZS9qcGVnfGltYWdlcy9oZDgvaGU1Lzk1Njg3Mzc3MjIzOTguanBnfDQ5YzA3YWViNjc1OTZhOTdmNThkNDUzM2JlMzdiZDA4M2RhM2UwNDU2ZmVlZDExZDE4MGRkNDE2NGI0NzJhODE" alt="">
+                    <p id="lillustrationimg">* This Android Smartphone image is for illustration purpose only. Actual image may vary.</p>
+                  </div>
+
+                  <p id="blktext">64 million pixels.</p>
+                  <p id="blktext">Chosen one by one.</p>
+                  <p>Behind the scenes of every shot, a series of algorithms combine the best elements of multiple frames to give you increased clarity.</p>
+
+                  <div id="imgTen">
+                    <img src="https://www.reliancedigital.in/medias/OnePlus-Nord-CE-5G-Smartphone-35?context=bWFzdGVyfGltYWdlc3w0NTYyMnxpbWFnZS9qcGVnfGltYWdlcy9oNGUvaDgyLzk1Njg3MzgwMTczMTAuanBnfGI4Njg0MGIxZDM1ZTgxMzgyODcxNmFkMGRkMWJjNzVlMDBkYTc1NzgwY2JkNGI4MzFhMTU4ZGM2N2UxMWViMjg" alt="">
+                    <p id="lillustrationimg">* This Android Smartphone image is for illustration purpose only. Actual image may vary.</p>
+                  </div>
+
+                  <p id="blktext">AI that sees what you see.</p>
+                  <p>AI scene detection interprets what you’re seeing and automatically adjusts camera settings like color, contrast, and exposure for brilliant, lifelike photos.</p>
+
+                  <div id="imgEleven">
+                    <img src="https://www.reliancedigital.in/medias/OnePlus-Nord-CE-5G-Smartphone-36?context=bWFzdGVyfGltYWdlc3wzNDEzNHxpbWFnZS9qcGVnfGltYWdlcy9oODUvaGI2Lzk1Njg3MzgwNTAwNzguanBnfDIzODJlNGIwODM5ZjY5NjVmYWE0M2FmZTg4NTcxOGY5NWExZGFlMTUwZTdhNjAxM2Y4YThjZWQ0MTI3NzczMjU" alt="">
+                  </div>
+                  <p id="lillustrationimg">* This Android Smartphone image is for illustration purpose only. Actual image may vary.</p>
+
+                  <div id="imgTwelve">
+                    <img src="https://www.reliancedigital.in/medias/OnePlus-Nord-CE-5G-Smartphone-37?context=bWFzdGVyfGltYWdlc3wyOTA1N3xpbWFnZS9qcGVnfGltYWdlcy9oYjcvaGI2Lzk1Njg3Mzc4MjA3MDIuanBnfGMyYmVkOGIyODYwN2RiODk0NTVhMjNmNWIzNWRlMDdjNTEwMzJkNDA0ZGVmYzdhMjFjZjNjOWE2YmZiNmNlZDM" alt="">
+                  </div>
+                  <p id="lillustrationimg">* This Android Smartphone image is for illustration purpose only. Actual image may vary.</p>
+
+                  <div id="imgThirteen">
+                    <img src="https://www.reliancedigital.in/medias/OnePlus-Nord-CE-5G-Smartphone-38?context=bWFzdGVyfGltYWdlc3w0NjYzM3xpbWFnZS9qcGVnfGltYWdlcy9oNTgvaDQ5Lzk1Njg3Mzg0MTA1MjYuanBnfGE4YTc5Y2JkZmE1ZGUwYTRhMWM5YzQ5M2U1ZmFmMmMzZmY5YzZmNmNlMWI2MzhkYTc4Y2QwNTgyMDQxMjBmNzY" alt="">
+                  </div>
+                  <p id="lillustrationimg">* This Android Smartphone image is for illustration purpose only. Actual image may vary.</p>
+
+                  <div id="imgFourteen">
+                    <img src="https://www.reliancedigital.in/medias/OnePlus-Nord-CE-5G-Smartphone-39?context=bWFzdGVyfGltYWdlc3wyMDAwOXxpbWFnZS9qcGVnfGltYWdlcy9oNzkvaDhiLzk1Njg3MzgyMTM5MTguanBnfDU0YTRhZmJjNmZkYTIyNDk4ZGNhYjM2NWZmYjdlZDIyMGExNzg2NWZkYjYwYjRmMDMyZWQzZTBlOWRlMGE5NjY" alt="">
+                  </div>
+                  <p id="lillustrationimg">* This Android Smartphone image is for illustration purpose only. Actual image may vary.</p>
+
+                  <div id="imgFifthteen">
+                    <img src="https://www.reliancedigital.in/medias/OnePlus-Nord-CE-5G-Smartphone-40?context=bWFzdGVyfGltYWdlc3wxMzg2OHxpbWFnZS9qcGVnfGltYWdlcy9oNGYvaGFlLzk1Njg3Mzg3NzA5NzQuanBnfDBiZjhlNTM1MTg5MWFkNDRlMzY1MGIzNzc5Y2QzZGFjZWE3YmJjODA4ODQwN2JiMzg1YmMwMzViMGM1MDM0ZGQ" alt="">
+                  </div>
+                  <p id="lillustrationimg">* This Android Smartphone image is for illustration purpose only. Actual image may vary.</p>
+
+                  <p id="blktext">Fed up with flash?</p>
+                  <p id="blktext">Yeah, us too</p>
+
+                  <div id="imgSixteen">
+                    <img src="https://www.reliancedigital.in/medias/OnePlus-Nord-CE-5G-Smartphone-41?context=bWFzdGVyfGltYWdlc3w4MjMzMXxpbWFnZS9qcGVnfGltYWdlcy9oNjMvaDgyLzk1Njg3Mzc4ODYyMzguanBnfGU5MTkwNWY0NzdmOGI1NTU5OGY4NWJiZGJiM2EzYTA5ZDZhOGY5OWQ5NDFjZjRkMjg5MDNiMDU2ZTUzZDQwYTk" alt="">
+                  </div>
+                  <p id="lillustrationimg">* This Android Smartphone image is for illustration purpose only. Actual image may vary.</p>
+
+                  <p id="blktext">Do night right</p>
+                  <p>Nightscape intelligently captures and manages several exposures in real time to produce sharp, detailed images in low light.</p>
+
+                  <div id="imgSeventeen">
+                    <img src="https://www.reliancedigital.in/medias/OnePlus-Nord-CE-5G-Smartphone-42?context=bWFzdGVyfGltYWdlc3w1Nzc5M3xpbWFnZS9qcGVnfGltYWdlcy9oMGMvaGExLzk1Njg3Mzc2MjQwOTQuanBnfDBkNDdhM2ZiMmMwMDBlNzI2ZGNkODFlOGE1NmU4MTYzNjE4YThkMTc5MjBkNmExZWVkYjU5NGY2NTI3ZTFlNTQ" alt="">
+                  </div>
+                  <p id="lillustrationimg">* This Android Smartphone image is for illustration purpose only. Actual image may vary.</p>
+
+                  <div id="imgEighteen">
+                    <img src="https://www.reliancedigital.in/medias/OnePlus-Nord-CE-5G-Smartphone-43?context=bWFzdGVyfGltYWdlc3wxOTU2MnxpbWFnZS9qcGVnfGltYWdlcy9oOTEvaDQ4Lzk1Njg3Mzc1OTEzMjYuanBnfDA0MDkxZTA2YzliMTkzODEwMmNkYjFkMGY0ZjA4NWI0NTIxYmEyYmYwOWE0Yzg4NDJjNzhlMzA3OGM0ZTcyMmM" alt="">
+                  </div>
+                  <p id="lillustrationimg">* This Android Smartphone image is for illustration purpose only. Actual image may vary.</p>
+
+                  <p id="blktext">Ultra wide when things get ultra weird.</p>
+                  <p>Why limit yourself to a standard lens? Why take a nap on the roof in the middle of the day? We don’t know. But we do know this: our 119° ultra-wide lens helps you squeeze more detail into every photo.</p>
+
+                  <div id="imgNineteen">
+                    <img src="https://www.reliancedigital.in/medias/OnePlus-Nord-CE-5G-Smartphone-44?context=bWFzdGVyfGltYWdlc3w1MjUxMnxpbWFnZS9qcGVnfGltYWdlcy9oY2YvaGU4Lzk1Njg3Mzg4MzY1MTAuanBnfDhlZWNhNDNiZGE4NWJiMWU3YmMyMWFiZTkwM2E2NjU1ZDM4MTJiYWExZjM2YWI5YjUzZDRiNmEyOTU0NjFkNzM" alt="">
+                  </div>
+                  <p id="lillustrationimg">* This Android Smartphone image is for illustration purpose only. Actual image may vary.</p>
+
+                  <p id="blktext">Selfie. Set. Go.</p>
+                  <p>16 MP selfie camera for stunning, social-ready selfies.</p>
+
+                  <div id="imgTwenty">
+                    <img src="https://www.reliancedigital.in/medias/OnePlus-Nord-CE-5G-Smartphone-45?context=bWFzdGVyfGltYWdlc3wyNDA2MHxpbWFnZS9qcGVnfGltYWdlcy9oMDcvaDQxLzk1Njg3Mzg5MDIwNDYuanBnfGZhNWI2MzczOTY5YmM2MDBjNjQwZWFlNGE1Y2NkMjFiYmY2MWYwM2ExZDFkNTE3N2Q1YWNiYTk0OTkyOGEzYmM" alt="">
+                  </div>
+                  <p id="lillustrationimg">* This Android Smartphone image is for illustration purpose only. Actual image may vary.</p>
+
+                  <div id="imgTwentyone">
+                    <img src="https://www.reliancedigital.in/medias/OnePlus-Nord-CE-5G-Smartphone-46?context=bWFzdGVyfGltYWdlc3wzNzEwNXxpbWFnZS9qcGVnfGltYWdlcy9oNWQvaDBjLzk1Njg3Mzg4MDM3NDIuanBnfGY0NDExYzNjODYzMjgwNDRlZTY4MDE5MjMyYTU4NzAxOTg0OGJhNGYwYjlhOTYyNWQ4N2IxZjM0NzE3MmJhZWQ" alt="">
+                    <p id="lillustrationimg">* This Android Smartphone image is for illustration purpose only. Actual image may vary.</p>
+                  </div>
+
+                  <p id="blktext">Okay.</p>
+                  <p id="blktext">Time to focus.</p>
+                  <p>Both front and rear cameras feature Portrait Mode, giving you more creative control than ever. Automatically adjust focus to create eye-catching bokeh effects.</p>
+
+                  <div id="imgTwentytwo">
+                    <img src="https://www.reliancedigital.in/medias/OnePlus-Nord-CE-5G-Smartphone-47?context=bWFzdGVyfGltYWdlc3wzNDgwMnxpbWFnZS9qcGVnfGltYWdlcy9oZjcvaDI3Lzk1Njg3Mzg4NjkyNzguanBnfDdmZTZlNTFmMzY2NjkxYjcyNGJiNzBkMzQ0MGFiYWRlYmM1ZDk4NjVhNzM4YjNmMmI3YTFkMzdiN2NkOWI4MmU" alt="">
+                  </div>
+                  <p id="lillustrationimg">* This Android Smartphone image is for illustration purpose only. Actual image may vary.</p>
+
+                  <p id="blktext">PURE PERFORMANCE</p>
+                  <p id="blktext">Smooth comes standard.</p>
+                  <p>Whether scrolling, swiping, or streaming, our 90 Hz refresh rate delivers 50% more visual information every second for a captivatingly smooth experience.</p>
+
+                  <div id="imgTwentythree">
+                    <img src="https://www.reliancedigital.in/medias/OnePlus-Nord-CE-5G-Smartphone-48?context=bWFzdGVyfGltYWdlc3wyMzk0NHxpbWFnZS9qcGVnfGltYWdlcy9oOWEvaGM3Lzk1Njg3Mzg1MDg4MzAuanBnfDdlMTE0NGY1ODE3NjViN2M5ZjU1ZTlhYTBhZjYxODgwZjUxOTU1NjMzZTZlOGM2ZDkxNTQ5ZTA4OWRmYWZkMzc" alt="">
+                  </div>
+                  <p id="lillustrationimg">* This Android Smartphone image is for illustration purpose only. Actual image may vary.</p>
+
+                  <p id="blktext">AI smarts.</p>
+                  <p id="blktext">Dragon speeds.</p>
+                  <p>
+                    Qualcomm Snapdragon 750G 5G Mobile Platform uses its onboard AI to power advanced processing, incredible graphics, and 5G gaming. Plus, up to 12 GB RAM make sure every app flies fast and smooth.</p>
+
+                  <div id="imgTwentyfour">
+                    <img src="https://www.reliancedigital.in/medias/OnePlus-Nord-CE-5G-Smartphone-49?context=bWFzdGVyfGltYWdlc3w0ODA4NnxpbWFnZS9qcGVnfGltYWdlcy9oYzgvaDYxLzk1Njg3Mzg1NzQzNjYuanBnfDVjZjVhZTc1ZTBlOTA5MmM0MmE4ZmRjZDQxNjU1NmNhYjQwYmEzMjc2NDQyYmViZDY0MjIyZWU1MDY2ZDZiOTA" alt="">
+                  </div>
+                  <p id="lillustrationimg">* This Android Smartphone image is for illustration purpose only. Actual image may vary.</p>
+
+                  <p id="blktext">Step up to 5G with CE.</p>
+                  <p>Experience better-than-broadband speeds on Nord CE 5G. With up to 2.95 Gbps, you can download movies, series, and strange amounts of internet memes in just minutes.</p>
+
+
+                  <div id="imgTwentyfive">
+                    <img src="https://www.reliancedigital.in/medias/OnePlus-Nord-CE-5G-Smartphone-50?context=bWFzdGVyfGltYWdlc3w1NzIwNXxpbWFnZS9qcGVnfGltYWdlcy9oOGYvaDFmLzk1Njg3Mzc5MTkwMDYuanBnfDhiZDdjYWIzMDQ3ZjhmMDY1MzhiNDE1MDEzNjk0NzdiMTNmOGUzYWIxNTY5YjRiNmZkMzI3M2Y3NWEzOGYzOGM" alt="">
+                  </div>
+                  <p id="lillustrationimg">* This Android Smartphone image is for illustration purpose only. Actual image may vary.</p>
+
+                  <p id="blktext">NEW FEATURES BY THE HANDFUL</p>
+                  <p id="ossystemss" class="blktext"></p>
+                  <p>Nord CE 5G runs on OxygenOS experience based on Android 11 and introduces a bunch of new features.</p>
+
+                  <div id="imgTwentysix">
+                    <img src="https://www.reliancedigital.in/medias/OnePlus-Nord-CE-5G-Smartphone-51?context=bWFzdGVyfGltYWdlc3w0NTM0OHxpbWFnZS9qcGVnfGltYWdlcy9oNjQvaDkzLzk1Njg3Mzg1NDE1OTguanBnfDcwOGU1ZmY5ZjQyZDlhMjg4ZDJiOGJmMmY4NzZiYWVlZDE2NWQwNjA4NjJjN2U2YTJiYWU3MTgwNTVjMDc5OGQ" alt="">
+                  </div>
+                  <p id="lillustrationimg">* This Android Smartphone image is for illustration purpose only. Actual image may vary.</p>
+
+                  <p id="blktext">Dark mode</p>
+                  <p>Reduce strain on your eyes when using your device in the dark and look cool doing it.</p>
+
+
+                  <div id="imgTwentyseven">
+                    <img src="https://www.reliancedigital.in/medias/OnePlus-Nord-CE-5G-Smartphone-52?context=bWFzdGVyfGltYWdlc3w0MzgxNXxpbWFnZS9qcGVnfGltYWdlcy9oMTQvaDllLzk1Njg3Mzg5MzQ4MTQuanBnfDE2ZmZlYmVjYjE3OGU3YzVmZjBmYTA5YmY2OWViZjkwMWU1MDFiYmJkODkxMzVhMDA1MDE0YzMyMmZjMTJlYWQ" alt="">
+                  </div>
+                  <p id="lillustrationimg">* This Android Smartphone image is for illustration purpose only. Actual image may vary.</p>
+
+                  <p id="blktext">Customized always on display</p>
+                  <p>Tailor your AOD with colors, graphics, and create one-of-a-kind photo illustrations.</p>
+
+                  <div id="imgTwentyeight">
+                    <img src="https://www.reliancedigital.in/medias/OnePlus-Nord-CE-5G-Smartphone-53?context=bWFzdGVyfGltYWdlc3wyMzM0MXxpbWFnZS9qcGVnfGltYWdlcy9oMDAvaDA3Lzk1Njg3MzkwOTg2NTQuanBnfGNiMTc2ZmE3YzI2YjQ3YjIwZThiNTk2YmJlMjFkMGYxZjA3ODQ3NDM1ZDhiNjZhYTYyZWNiZjIyNWMwNGVkZTY" alt="">
+                  </div>
+                  <p id="lillustrationimg">* This Android Smartphone image is for illustration purpose only. Actual image may vary.</p>
+
+                  <p id="blktext">One hand wonder</p>
+                  <p>Whether texting with friends or frantically searching for an address, we’ve calibrated our UI to make one-handed usage a whole lot easier.</p>
+
+
+                  <div id="imgTwentynine">
+                    <img src="https://www.reliancedigital.in/medias/OnePlus-Nord-CE-5G-Smartphone-54?context=bWFzdGVyfGltYWdlc3wzNzk2NHxpbWFnZS9qcGVnfGltYWdlcy9oZmYvaDZmLzk1Njg3MzkxMzE0MjIuanBnfDViNWY1M2Y3ZGVmYjI2ZDZhMDhiN2ZlNDgxZjk2ZDhiOGQxYTMxZDVjYmIyN2M2NjM1NjlkMDc3MThhOGVjODE" alt="">
+                  </div>
+                  <p id="lillustrationimg">* This Android Smartphone image is for illustration purpose only. Actual image may vary.</p>
+
+                  <hr id="hline2">
+
+              </div>
+
+              <!-- side offer bar code -->
+              <div id="otherOffers">
+                <div id="offertitle">You may also like</div>
+                <div id="offersrand">
+                  <div id="offer1">
+                    <div id="adjoffimg"><img src="https://www.reliancedigital.in/medias/Mi-Smart-Displays-and-Speakers-491936013-i-1-1200Wx1200H-300Wx300H?context=bWFzdGVyfGltYWdlc3w1MDMzNnxpbWFnZS9qcGVnfGltYWdlcy9oNWUvaDkxLzk0NjI1NjY3MTU0MjIuanBnfGNhMzEzMTM1ZWQzN2E3YmM5ODdkNWU1ZTYwYjQ4NGZiODNmYTMyZGI5OGQ0NzFiM2IyNzZmZTVlMzE0OTZmYjE" alt=""></div>
+                    <a href="">Mi Smart Speaker (With Google Assistant), Black</a>
+                    <p id="greytext">Offer Price:<span id="bigbcktxt">₹3,999.00</span></p>
+                    <p id="greytext">M.R.P:  <span id="dashtxt">₹5,999.00</span></p>
+                    <p id="greytext">You Save:  33%(₹2,000)</p>
+                  </div>
+
+                  <div id="offer1">
+                    <div id="adjoffimg"><img src="https://www.reliancedigital.in/medias/One-Plus-E304A-Headphones-491973491-i-1-1200Wx1200H-300Wx300H?context=bWFzdGVyfGltYWdlc3wxMzE2N3xpbWFnZS9qcGVnfGltYWdlcy9oZjgvaDM2Lzk2NTQxODUzNjE0MzguanBnfGFkNGJiMGYwYTkxMzMzMjQ4Yjc3NzMwMTE1OGRlZmMxMjdjNWJkOTVhNDFkZGI0ZmFhMTYwYTVmMDIxZDk1YTI" alt=""></div>
+                    <a href="">OnePlus Bullets Z Series Bass Edition Wireless Headphone, Blue</a>
+                    <p id="greytext">Offer Price:<span id="bigbcktxt">₹1,999.00</span></p>
+                    <p id="greytext">M.R.P:  <span id="dashtxt">₹2,190.00</span></p>
+                    <p id="greytext">You Save:  9%(₹191)</p>
+                  </div>
+
+                  <div id="offer1">
+                    <div id="adjoffimg"><img src="https://www.reliancedigital.in/medias/OnePlus-Buds-Pro-Headphones-and-Headsets-492391799-i-1-1200Wx1200H-300Wx300H?context=bWFzdGVyfGltYWdlc3wyNjI2NnxpbWFnZS9qcGVnfGltYWdlcy9oMGEvaGY0Lzk2NDQyNzkzMDAxMjYuanBnfGNiNDJlOGZhYzlhNjcwODlmZTY5MjNjNWRhNDNiNDg3ZWM2MTNlMGZiMmQwNTBiMzRmMmZhMzA3NGY1ZjE2YWI" alt=""></div>
+                    <a href="">OnePlus Buds Pro Earbuds with Adaptive Noise Cancelling, Up To 38 Hours Of Battery Life, Matte Black</a>
+                    <p id="greytext">Offer Price:<span id="bigbcktxt">₹9,999.00</span></p>
+                    <p id="greytext">M.R.P:  <span id="dashtxt">₹11,999.00</span></p>
+                    <p id="greytext">You Save:  17%(₹2,000)</p>
+                  </div>
+
+                  <div id="offer1">
+                    <div id="adjoffimg"><img src="https://www.reliancedigital.in/medias/OnePlus-Buds-Z-Headphones-and-Headsets-491973493-i-1-1200Wx1200H-300Wx300H?context=bWFzdGVyfGltYWdlc3wzNjY2OXxpbWFnZS9qcGVnfGltYWdlcy9oZmIvaDZjLzk1ODQ5MTI2OTUzMjYuanBnfDBhN2MxMGU1MWM5MWUzNDU5ZjAyOWVhZTdiNjYxMjY1OTdjZDAxYmJhYmU0MGVmZmZlYzg4YTc2ODZkYjg0OWI" alt=""></div>
+                    <a href="">OnePlus TWS Buds Z with Up to 20 Hours of Battery Life, Fast Charging, 10 Meters Wireless Range Gray</a>
+                    <p id="greytext">Offer Price:<span id="bigbcktxt">₹2,999.00</span></p>
+                    <p id="greytext">M.R.P:  <span id="dashtxt">₹3,190.00</span></p>
+                    <p id="greytext">You Save:  6%(₹191)</p>
+                  </div>
+
+                  <div id="offer1">
+                    <div id="adjoffimg"><img src="https://www.reliancedigital.in/medias/JBL-T110-Headphones-and-Headsets-491377967-i-1-1200Wx1200H-300Wx300H?context=bWFzdGVyfGltYWdlc3wzMDA5MnxpbWFnZS9qcGVnfGltYWdlcy9oMzAvaDg5LzkzMzAxNTM2NTIyNTQuanBnfDI4MWZmM2FiMWRjYmM2ZmE3NTA4M2E0YTliNmU1NDY3ZWEzMDY5YWZlM2ZiZTUzYjljZTI0MWVmYWZjNjVmOGU" alt=""></div>
+                    <a href="">JBL T110BT Pure Bass in-Ear Wireless Headphone with Mic, Magnetic Cable and Quick Charging (Black)</a>
+                    <p id="greytext">Offer Price:<span id="bigbcktxt">₹1,599.00</span></p>
+                    <p id="greytext">M.R.P:  <span id="dashtxt">₹2,499.00</span></p>
+                    <p id="greytext">You Save:  36%(₹900)</p>
+                  </div>
+
+                  <div id="offer1">
+                    <div id="adjoffimg"><img src="https://www.reliancedigital.in/medias/JBL-T115TWS-Headphones-and-Headsets-491973529-i-1-1200Wx1200H-300Wx300H?context=bWFzdGVyfGltYWdlc3w0NTM3OHxpbWFnZS9qcGVnfGltYWdlcy9oZjgvaDAzLzk1MDY1ODA1NjE5NTAuanBnfDc0ZmFkZTQ4MWYwMzYxYmRhZTJhMTAwMTdmOTBhN2I0M2ZmODAzN2IzOTJkZDgzMTFlODE2ZWM0YTA0OTkwZTc" alt=""></div>
+                    <a href="">JBL T110BT Pure Bass in-Ear Wireless Headphone with Mic, Magnetic Cable and Quick Charging (Black)</a>
+                    <p id="greytext">Offer Price:<span id="bigbcktxt">₹4,199.00</span></p>
+                    <p id="greytext">M.R.P:  <span id="dashtxt">₹8,999.00</span></p>
+                    <p id="greytext">You Save:  53%(₹4800)</p>
+                  </div>
+
+
+                </div>
+
+              </div>
+          </div>
+      </div>
+
+      <!-- detailed specification of phone -->
+      <div id="leftmarginspecdiv">
+        <p id="detailSpec">Specifications</p>
+        <p id="detailblktext">General Information</p>
+        <div id="details">
+            <div id="keyDiv">
+                <div id="key">
+                    <p>Colour</p>
+                    <p>Series</p>
+                    <p>Model</p>
+                    <p>Brand</p>
+                </div>
+            </div>
+    
+            <div id="valueDiv">
+                <div id="value">
+                    <p id="color"></p>
+                    <p>Android</p>
+                    <p>Smartphone</p>
+                    <p id="brand">One Plus</p>
+                </div>
+            </div>
+        </div>
+
+        <p id="detailblktext">Phone Hardware & Storage</p>
+        <div id="details">
+            <div id="keyDiv">
+                <div id="key">
+                    <p>Internal Storage</p>
+                    <p>Processor</p>
+                </div>
+            </div>
+    
+            <div id="valueDiv">
+                <div id="value">
+                    <p id="memory"></p>
+                    <p id="processordet"></p>
+                </div>
+            </div>
+        </div>
+
+        <p id="detailblktext">Phone Network & Inter-device Connectivity</p>
+        <div id="details">
+            <div id="keyDiv">
+                <div id="key">
+                    <p>Bluetooth Version</p>
+                    <p>Audio Jack</p>
+                    <p>Height</p>
+                    <p>Width</p>
+                    <p>Thickness</p>
+                    <p>Weight</p>
+                    <p>Fingerprint Recognition</p>
+                    <p>Sensors</p>
+                </div>
+            </div>
+    
+            <div id="valueDiv">
+                <div id="value">
+                    <p>v5.1</p>
+                    <p>3.5 mm</p>
+                    <p>15.92 cm</p>
+                    <p>7.35 cm</p>
+                    <p>0.79 cm</p>
+                    <p>170 gram</p>
+                    <p>Yes</p>
+                    <p>Accelerometer, Gyroscope, Sensor Core</p>
+                </div>
+            </div>
+        </div>
+
+
+        <p id="detailblktext">Phone OS</p>
+        <div id="details">
+            <div id="keyDiv">
+                <div id="key">
+                    <p>Operating System</p>
+                </div>
+            </div>
+    
+            <div id="valueDiv">
+                <div id="value">
+                    <p id="osdet"></p>
+                </div>
+            </div>
+        </div>
+
+
+        <p id="detailblktext">Network & Inter-device Connectivity</p>
+        <div id="details">
+            <div id="keyDiv">
+                <div id="key">
+                    <p>Operating System Type</p>
+                    <p>SIM Type</p>
+                    <p>USB</p>
+                    <p>5G</p>
+
+
+                </div>
+            </div>
+    
+            <div id="valueDiv">
+                <div id="value">
+                    <p>Android</p>
+                    <p>Dual SIM</p>
+                    <p>USB 2.0, Type-C</p>
+                    <p>Yes</p>
+
+                </div>
+            </div>
+        </div>
+
+        <p id="detailblktext">Phone Battery & Charge Time</p>
+        <div id="details">
+            <div id="keyDiv">
+                <div id="key">
+                    <p>Battery Capacity</p>
+                    <p>Quick Charge</p>
+                </div>
+            </div>
+    
+            <div id="valueDiv">
+                <div id="value">
+                    <p>4500 mAh</p>
+                    <p>Yes</p>
+                </div>
+            </div>
+        </div>
+
+        <p id="detailblktext">Screen Display & Camera</p>
+        <div id="details">
+            <div id="keyDiv">
+                <div id="key">
+                    <p>Screen Resolution</p>
+                    <p>Primary Camera</p>
+                    <p>Display Type</p>
+                </div>
+            </div>
+    
+            <div id="valueDiv">
+                <div id="value">
+                    <p>2400 x 1080</p>
+                    <p>64 MP, 8 MP, 2 MP</p>
+                    <p>AMOLED</p>
+                </div>
+            </div>
+        </div>
+
+
+        <p id="detailblktext">Phone Build & Convenience</p>
+        <div id="details">
+            <div id="keyDiv">
+                <div id="key">
+                    <p>Selfie Camera</p>
+                    <p>Screen Size (Diagonal)</p>
+                </div>
+            </div>
+    
+            <div id="valueDiv">
+                <div id="value">
+                    <p>16 MP</p>
+                    <p>16.33 cm (6.43 inches)</p>
+                </div>
+            </div>
+        </div>
+
+
+        <p id="detailblktext">Hardware Details</p>
+        <div id="details">
+            <div id="keyDiv">
+                <div id="key">
+                    <p>Memory (RAM)</p>
+                </div>
+            </div>
+    
+            <div id="valueDiv">
+                <div id="value">
+                    <p id="ram"></p>
+                </div>
+            </div>
+        </div>
+
+
+        <p id="detailblktext">Formats Supported</p>
+        <div id="details">
+            <div id="keyDiv">
+                <div id="key">
+                    <p>Audio Formats</p>
+                    <p>Video Formats</p>
+                </div>
+            </div>
+    
+            <div id="valueDiv">
+                <div id="value">
+                    <p>WAV, AAC, AAC+, MP3, WMA, AMR, FLAC, ALAC, AIFF, APE</p>
+                    <p>H.264, H.263, MPEG2, MPEG4</p>
+                </div>
+            </div>
+        </div>
+
+
+        <p id="detailblktext">Additional Features</p>
+        <div id="details">
+            <div id="keyDiv">
+                <div id="key">
+                    <p>Features</p>
+                </div>
+            </div>
+    
+            <div id="valueDiv">
+                <div id="value">
+                    <p id="lesslinegap">64 MP (f/1.79, 6P Lens), 8 MP (Wide- 119⁰ FOV f/2.25), 2 MP (f/2.4, Monochrome) Primary Camera</p>
+                    <p id="lesslinegap">90 Hz Refresh Rate</p>
+                    <p id="lesslinegap">Aspect Ratio: 20:9</p>
+                    <p id="lesslinegap">Display : Ambient display, Dark mode, Reading mode</p>
+                </div>
+            </div>
+        </div>
+
+
+        <p id="detailblktext">In The Box & Warranty</p>
+        <div id="details">
+            <div id="keyDiv">
+                <div id="key">
+                    <p>In The Box</p>
+                    <p id="wrntyGap">Warranty</p>
+                </div>
+            </div>
+    
+            <div id="valueDiv">
+                <div id="value">
+                    <p id="lesslinegap">Warp Charge 30T Power Adapter, Warp Type-C Cable (Support USB 2.0), Phone Case, Screen</p>
+                    <p id="lesslinegap">Protector (pre-applied), SIM Tray Ejector, Welcome Letter, Quick Start Guide, Safety Information and</p>
+                    <p id="lesslinegap">Warranty Card, Highest SAR Value</p>
+                    <p>1 Year</p>
+                </div>
+            </div>
+        </div>
+
+
+        <p id="detailblktext">Manufacturing & Packing Information</p>
+        <div id="details">
+            <div id="keyDiv">
+                <div id="key">
+                    <p>Customer care address</p>
+                    <p id="ccphone">Customer care Phone</p>
+                    <p id="lesslinegap">Customer care email</p>
+                    <p>Country of origin</p>
+                    <p>Name and address of Manufacturer</p>
+                    <p id="adrsimporter">Name and address of Importer</p>
+                    <p id="lesslinegaped">Name of Seller</p>
+                    <p id="lesslinegaped">Month and Year of Commodity First Manufactured/Imported/Packed</p>
+                    <p id="lesslinegaped">Commodity name</p>
+                    <p id="lesslinegaped">Item Width</p>
+                    <p id="lesslinegaped">Item Height</p>
+                    <p id="lesslinegaped">Item Length</p>
+                    <p id="lesslinegaped">Net Quantity</p>
+                    <p id="lesslinegaped">Net Weight</p>
+                </div>
+            </div>
+    
+            <div id="valueDiv">
+                <div id="value">
+                    <p id="lesslinegap">Reliance Digital, Reliance Retail Limited, 3rd Floor, Court House, Lokmanya Tilak Marg, Dhobi Talao,</p>
+                    <p id="lesslinegap">Mumbai-400 002, Maharashtra, India.</p>
+                    <p id="lesslinegap">1800-889-1055</p>
+                    <p id="lesslinegap">reliancedigital@ril.com</p>
+                    <p>India</p>
+                    <p id="lesslinegapE">OPPO Mobiles India Private Limited Add: Plot NO.1, Sector-Ecotech-VII, Greater Noida Industrial</p>
+                    <p id="lesslinegap">Development area, Greater Noida, Gautam Buddha Nagar, Uttar Pradesh -201306 India, OPPO</p>
+                    <p id="lesslinegap">Mobiles India Private Limited Add: Plot NO.1, Sector-Ecotech-VII, Greater Noida Industrial</p>
+                    <p id="lesslinegap">Development area, Greater Noida, Gautam Buddha Nagar, Uttar Pradesh -201306 India</p>
+                    <p>OPPO MOBILE INDIA PRIVATE LIMITED, Plot no1, Sector Ecotech - 5, Greater Noida, Uttar Pradesh -</p>
+                    <p id="lesslinegap">201306, India.</p>
+                    <p id="lesslinegap">Reliance Retail Ltd.</p>
+                    <p id="lesslinegap">June' 2021</p>
+                    <p id="lesslinegap">Mobile Phone</p>
+                    <p id="lesslinegap">7.35 cm</p>
+                    <p id="lesslinegap">0.79 cm</p>
+                    <p id="lesslinegap">15.92 cm</p>
+                    <p id="lesslinegap">1N</p>
+                    <p id="lesslinegap">612.5 gram</p>
+                </div>
+            </div>
+        </div>
+
+      </div>
+
+      <hr id="hline2"> 
+
+      <!-- customer review section code -->
+      <div id="customerRev">
+          <p id="cstrevtag">Customer Reviews</p>
+          <button id="writerevbtn">WRITE A PRODUCT REVIEW</button>
+      </div>
+    </div>
+    <footer></footer>
+  </body>
+</html>
+<script type="module" src="./scripts/indiprductpage.js"></script>
+<script type="module">
+
+import {footer, header} from './components/header_footer.js'
+document.querySelector("footer").innerHTML = footer()
+document.querySelector("header").innerHTML = header()
+
+import headerFunctionality from "./scripts/header.js"
+headerFunctionality()
+
+
+function openImg(){
+    var image = document.getElementById('getsrc');
+    var source = image.src;
+    window.open(source);
+}
+
+
+document.getElementById("buyNow").addEventListener("click", function() {
+    
+    let pin = document.querySelector("#pinCode").value
+    
+    
+    if(pin.length === 6){
+      let pincheck = document.getElementById('pinalert')
+      pincheck.style.display = 'none'
+      window.location.href = "cart.html"
+    }
+    else{
+      let pincheck = document.getElementById('pinalert')
+      pincheck.style.display = 'block'
+      
+    }
+  });
+
+
+
+  
+
+
+</script>
+
+<script>
+  
+
+// let res = await fetch("http://127.0.0.1:3000/api/products/3");
+
+// let prod = await res.json();
+// console.log(prod);
+
+// localStorage.setItem("try",JSON.stringify(prod))
+
+// let temp = JSON.parse(localStorage.getItem("try"))
+
+let check = JSON.parse(localStorage.getItem("selected_product"))
+
+let res = await fetch(`http://127.0.0.1:3000/api/products/${check}`);
+let temp = await res.json();
+
+// let cart = JSON.parse(localStorage.getItem("relianceCart")) || []
+//setting data in local storage for cart
+var prodData={
+    name:temp.name,
+    image: temp.image,
+    price:temp.price
+}
+
+document.getElementById("addtoCart").addEventListener("click", function() {
+    console.log("Yes");
+    // cart.push(prodData)
+    localStorage.setItem("relianceCart",JSON.stringify(prodData));
+    // window.location.href = "cart.html"
+    
+  });
+
+//Page Tiltle dynamic
+document.title = 'Buy'+" "+temp.name
+
+//trial
+
+//trial
+
+//sectionbar names
+let scbrand = document.getElementById('brandNamesc')
+scbrand.innerText = temp.brand
+let scname = document.getElementById('deviceNamesc')
+scname.innerText = temp.name
+
+//Android device images
+document.getElementById('myimage').src= temp.image
+
+//key feature details
+let name = document.getElementById('deviceName')
+name.innerText = temp.name
+let price = document.getElementById('mainPrice')
+price.innerText = temp.price
+let display = document.getElementById('display')
+display.innerText = temp.display
+let camera = document.getElementById('camera')
+camera.innerText = temp.camera
+let processor = document.getElementById('processor')
+processor.innerText = temp.processor
+let ossystem = document.getElementById('ossystem')
+ossystem.innerText = temp.ossystem 
+
+// Details under images
+let processors = document.getElementById('processors')
+processors.innerText = temp.processor
+let ossystems = document.getElementById('ossystems')
+ossystems.innerText = temp.ossystem 
+let cameras = document.getElementById('cameras')
+cameras.innerText = temp.camera
+
+//Detailed Specification starts
+let color = document.getElementById('color')
+color.innerText = temp.color
+let brand = document.getElementById('brand')
+brand.innerText = temp.brand
+let memory = document.getElementById('memory')
+memory.innerText = temp.memory
+let processordet = document.getElementById('processordet')
+processordet.innerText = temp.processor
+let osdet = document.getElementById('osdet')
+osdet.innerText = temp.ossystem 
+let ram = document.getElementById('ram')
+ram.innerText = temp.ram 
+
+
+//code for changing mobile images on click
+const allImage = document.querySelectorAll('.smallimgDiv div img')
+
+const imgContain = document.querySelector('.deviceimage');
+
+window.addEventListener('DOMContentLoaded', () => {
+    allImage[0].parentElement.classList.add('active');
+})
+
+allImage.forEach((image) => {
+    image.addEventListener('click', () =>{
+        console.log(image.src)
+        imgContain.querySelector('img').src = image.src;
+    });
+});
+
+
+    
+
+
+</script>
