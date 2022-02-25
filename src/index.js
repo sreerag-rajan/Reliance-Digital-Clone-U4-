@@ -15,6 +15,10 @@ const categoryController = require("./controllers/category.controller");
 const imagesController = require("./controllers/images.controller");
 const productrowController = require("./controllers/productrow.controller");
 
+// routes 
+const cartRoutes = require("./routes/cart");
+
+
 app.use(express.static(path.join(__dirname, "../public")));
 app.use(express.json());
 
@@ -30,6 +34,8 @@ app.use("/product", productController);
 app.use("/category", categoryController);
 app.use("/images", imagesController);
 app.use("/productrow", productrowController);
+
+app.use("/cart", cartRoutes);
 
 app.post("/register", register);
 app.post("/login", login);
