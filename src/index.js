@@ -20,7 +20,7 @@ const imagesController = require("./controllers/images.controller");
 const productrowController = require("./controllers/productrow.controller");
 
 // routes 
-// const cartcontroller = require("./controllers/cart.controller");
+const cartcontroller = require("./controllers/cart.controller");
 
 
 app.use(express.static(path.join(__dirname, "../public")));
@@ -41,9 +41,7 @@ app.use("/category", categoryController);
 app.use("/images", imagesController);
 app.use("/productrow", productrowController);
 
-app.get("/cart", (req,res)=>{
-  return res.render("cart.ejs");
-});
+app.use("/cart", cartcontroller);
 
 app.use("/auth",authController)
 
