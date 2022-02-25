@@ -16,7 +16,7 @@ app.use(express.json());
 app.set("view engine", "ejs")
 
 
-app.get("/search",searchController);
+app.use("/search",searchController);
 app.use("/product", productController);
 app.use("/category", categoryController);
 app.use("/images", imagesController);
