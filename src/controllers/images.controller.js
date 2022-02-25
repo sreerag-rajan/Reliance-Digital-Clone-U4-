@@ -39,6 +39,7 @@ router.get("/:id", async(req, res)=>{
 router.patch("/:id", upload.none(),async(req, res)=>{
     try{
         console.log(req.body)
+
         const images = await Images.findByIdAndUpdate(req.params.id,req.body, {new:true}).lean().exec();
         return res.status(201).send(images);
         

@@ -16,6 +16,7 @@ for(let i =0; i<brandfilter.length;i++){
 document.querySelector("#selectFilter").addEventListener("change",()=>{
   window.location.href = window.location.href.split("&sort=")[0] + "&sort="+document.querySelector("#selectFilter").value
 })
+
 // carausal start
 let caroasoulImg = [
   "https://www.reliancedigital.in/medias/Samsung-Galaxy-Z-Fold3-Flip3-5G-CLP-Banner-10-01-2022.jpg?context=bWFzdGVyfGltYWdlc3wxNjQxMjV8aW1hZ2UvanBlZ3xpbWFnZXMvaDFiL2g4NC85NzU0MDU2MTYzMzU4LmpwZ3xmMzk2ZWEzOWIwOTI2ODk1YjNiNzY1MGI2MDY5ZmJlODJmZTFlMGI4NjYwYjU1ZjE0OTg1YzczMTllYzhiMDk4",

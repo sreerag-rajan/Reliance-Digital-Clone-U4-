@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="/css/prodcatalogfromnav.css">
+
     <!-- <link rel="stylesheet" href="./styles/productCatalogBottom.css">
     <link rel="stylesheet" href="./styles/footer.css">
     <link rel="stylesheet" href="./styles/header.css"> -->
@@ -23,7 +25,9 @@
                 <img src="https://www.pngkey.com/png/full/823-8236029_senior-care-icon-home-page-icon-grey.png" alt="">
             </a>
             <img src="https://www.freeiconspng.com/uploads/right-arrow-icon-27.png" alt="">
+
             <span><%=category.name%></span>
+
         </div>
         
         <!-- L1 Break -->
@@ -31,7 +35,9 @@
             <div id="qgLeft">
                 <div>
                     <div class="smallHeading">
+
                         <div><%=images[0].desc%></div>
+
                         <div>|</div>
                         <div>View All</div>
                     </div>
@@ -40,6 +46,7 @@
                             <button id="scrollleftbtn1"><img src="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/angle-left-512.png" alt=""></button>
                         </div>
                         <div id="qglpd1" class="qgleftprodsouterDiv">
+
                             
                             <% let imgs = images[0].imageUrls;
                             for(let imgurl of imgs) {%>
@@ -50,6 +57,7 @@
                             </div>
                             <%}%>
                             
+
                         </div>
                         <div id="scrollrightbtn1"" class="rightbtn">
                             <button><img src="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/angle-right-512.png" alt=""></button>
@@ -60,7 +68,9 @@
                 </div>
                 <div>
                     <div class="smallHeading">
+
                         <div><%=images[1].desc%></div>
+
                         <div>|</div>
                         <div>View All</div>
                     </div>
@@ -69,12 +79,14 @@
                             <button id="scrollleftbtn2"><img src="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/angle-left-512.png" alt=""></button>
                         </div>
                         <div id="qglpd2" class="qgleftprodsouterDiv">
+
                             <% imgs = images[1].imageUrls; %>
                             <% for(let imgurl of imgs) { %>
                             <div class="qgLeftprods">
                                 <img src="<%=imgurl%>" alt="">
                             </div>
                             <% } %>
+
                         </div>
                         <div id="scrollrightbtn2" class="rightbtn">
                             <button><img src="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/angle-right-512.png" alt=""></button>
@@ -154,11 +166,13 @@
 
         <!-- L1 Break -->
         <div id="phonesDisplayBigDiv">
+
             <%for (row of prodrows){%>
     
             <div>
                 <div class="smallHeading">
                     <div><%=row.rowheading%></div>
+
                     <div>|</div>
                     <div>View All</div>
                 </div>
@@ -166,6 +180,7 @@
                     <div class="leftbtn"> 
                         <button id="scrollleftbtn4"><img src="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/angle-left-512.png" alt=""></button>
                     </div>
+
                     
                     <div id="pdbdd1" class="showPhonesDiv">
                         <%for(prod of row.products){%>
@@ -188,6 +203,7 @@
                             <%}%>
                         </div>
                         <%}%>
+
                         
                         
                     </div>
@@ -196,6 +212,7 @@
                     </div>
                 </div>
             </div>
+
             <%}%>
         <div id="bottomsection">
             
@@ -207,4 +224,6 @@
 </body>
 </html>
 
+
 <script src="/js/prodcatalogfromnav.js"></script>
+

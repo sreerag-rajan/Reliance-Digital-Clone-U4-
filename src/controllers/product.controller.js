@@ -15,6 +15,7 @@ router.post("", async(req,res)=>{
     }
 })
 
+
 router.get("", async(req,res)=>{
     try{
         const product = await Product.find().select({name:1}).lean().exec();
@@ -40,7 +41,6 @@ router.get("/:id", async(req,res)=>{
         return res.status(500).send(er.message)
     }
 })
-
 
 module.exports=router;
 

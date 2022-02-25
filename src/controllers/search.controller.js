@@ -1,3 +1,4 @@
+
 const express = require("express")
 const Product = require("../models/product.model")
 const Category = require("../models/category.model")
@@ -15,6 +16,7 @@ router.get("", async (req,res)=>{
             
             //getting all products from database
             let products = await Product.find().where(where).lean().exec();
+
             
             //filtering the products according to our searched term
             let filteredProds = [];
@@ -34,6 +36,7 @@ router.get("", async (req,res)=>{
                     }
                 }
             }
+
 
             //Sorting functinality
             if(req.query.sort){
@@ -77,12 +80,14 @@ router.get("", async (req,res)=>{
             }
             
             return res.render("productcatalogfromsearch.ejs",content);
-                
+
 
         }
         catch(er){
             return res.status(500).send(er.message)
         }
+
     })
 
 module.exports=router
+

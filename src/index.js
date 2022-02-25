@@ -1,10 +1,13 @@
+
 const path = require("path");
+
 const express = require("express");
 
 // const passport = require("./configs/google-oauth");
 // const { newToken } = require("./controllers/auth.controller");
 
 const app = express();
+
 
 app.use(express.json());
 
@@ -13,6 +16,7 @@ const searchController = require("./controllers/search.controller");
 const productController = require("./controllers/product.controller");
 const categoryController = require("./controllers/category.controller");
 const imagesController = require("./controllers/images.controller");
+
 const productrowController = require("./controllers/productrow.controller");
 
 // routes 
@@ -28,9 +32,6 @@ const userController = require("./controllers/user.controller");
 const authController = require("./controllers/auth.controller");
 
 app.get("",(req,res)=>{
-  if(req.header.Authorization){
-    console.log(req.header.Authorization);
-  }
   return res.render("index.ejs");
 })
 app.use("/search",searchController);
@@ -69,6 +70,7 @@ app.use("/users", userController);
 //     const { user } = req;
 //     const token = newToken(user);
 
+
 //     return res.send({ user, token });
 //   }
 // );
@@ -81,3 +83,4 @@ app.listen(2345, async () => {
     console.log(err.message);
   }
 });
+
