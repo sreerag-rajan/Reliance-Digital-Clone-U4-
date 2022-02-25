@@ -23,7 +23,9 @@ app.set("view engine", "ejs");
 const userController = require("./controllers/user.controller");
 const { register, login } = require("./controllers/auth.controller");
 
-app.get("/search", searchController);
+
+app.use("/search",searchController);
+
 app.use("/product", productController);
 app.use("/category", categoryController);
 app.use("/images", imagesController);
