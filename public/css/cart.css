@@ -1,0 +1,91 @@
+#main{
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+}
+#main>div:nth-child(2){
+    margin-right: 30px;
+}
+#chkt{
+    background-color: #e42529;
+    color: white;
+    width: 95%;
+    height: 40px;
+    border: none;
+    border-radius: 8px;
+    margin: 10px;
+}
+#checkout{
+    width: 400px;
+}
+#details{
+    border: 1px solid lightgray;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.bottomDiv button{
+    width: 50%;
+    background-color: white;
+    color: rgb(36, 147, 231);
+    padding: 10px;
+    border: 1px solid lightgray;
+}
+.topDiv{
+    display: flex;
+}
+.topDiv img{
+    width: 250px;
+}
+.topDiv>div:nth-child(2){
+    color: black;
+}
+.topDiv>div:nth-child(3){
+    text-align: end;
+}
+.topDiv>div:nth-child(3)>p:nth-child(1){
+    font-size: 20px;
+    font-weight: 600;
+}
+.bluetext{
+    color: blue;
+}
+.greentext{
+    color: green;
+}
+.countDiv{
+    display: flex;
+    gap: 20px;
+    font-size: 15px;
+    justify-content: center;
+}
+.countDiv>div{
+    border: 1px solid black;
+    padding: 5px 10px;
+}
+.countDiv>button{
+    width: 30px;
+    background-color: gainsboro;
+    font-weight: bold;
+    font-size: 18px;
+}
+.flex{
+    display: flex;
+    justify-content: space-between;
+    margin-right: 20px;
+}
+.flex>p:nth-child(2){
+    color: green;
+}
+#totamount{
+    display: flex;
+    justify-content: space-between;
+    margin-right: 20px;
+}
+#cartLength{
+    color: grey;
+    font-weight: 300;
+}
+h3{
+    margin-left: 20px;
+}
