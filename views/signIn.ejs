@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/header.css" />
+    <link rel="stylesheet" href="/css/signIn.css">
+    <title>Document</title>
+  </head>
+ 
+  <body>
+    <header></header>
+    <div id="cont">
+      <p class="login">Login</p>
+      <hr />
+      <div id="main">
+        <div class="vertical">
+          <form>
+            <label for="">Email</label>
+            <br />
+            <input type="text" id="email" />
+            <br /><br />
+            <label for="">Password</label>
+            <br />
+            <input type="text" id="password" />
+          </form>
+          <div id="forgot">
+            <p>Forgot password?</p>
+          </div>
+
+          <button>Continue</button>
+          <div id="char">
+            <p>Don't have an account yet?</p>
+            <a href="Register.html" class="reg"><p>REGISTER</p></a>
+          </div>
+        </div>
+        <div>
+          <p class="or">OR</p>
+        </div>
+        <div class="box2">
+          <p>Login Using</p>
+          <div class="fb">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPSigXFRA-lTqQ3AU6GBPH3-R46kfflfobbPG-Wh3ptncRtif5VhSJ_ROS42N7ex73TJI&usqp=CAU"
+              alt=""
+              class="image"
+            />
+            <h4>Facebook</h4>
+          </div>
+
+          <div class="google">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqlxZS_Xdny9zuNzMfjtzGBAkwEX002xOU6PT4EFxWaR0ZYQfP2FDJik_Erzvjfn7j-SI&usqp=CAU"
+              alt=""
+              class="image"
+            />
+            <h4>Google</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+<script>
+  document.querySelector("button").addEventListener("click", login);
+  var regduser = JSON.parse(localStorage.getItem("userdatabase"));
+
+  async function login() {
+    var email = document.querySelector("#email").value;
+
+    var password = document.querySelector("#password").value;
+    let cred = {email,password}
+    console.log(cred);
+    let response = await fetch("http://localhost:2345/auth/login",{
+        method:"POST",
+        body :JSON.stringify(cred),
+        headers:{
+            "Content-Type":"application/json"
+        }
+    });
+    let d = await response.json();
+    console.log(d);
+    window.location.href = "/"
+  }
+</script>
+
+

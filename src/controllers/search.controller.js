@@ -60,10 +60,10 @@ router.get("", async (req,res)=>{
             //fetching some data for the page
             let categories = await Category.find().lean().exec()
             //for sorting out all the brands
-            let allprods = await Product.find().lean().exec()            
+            // let allprods = await Product.find().lean().exec()            
             let brands = {};
-            for(let i =0; i<allprods.length;i++){
-                brands[allprods[i].brand]=1   
+            for(let i =0; i<filteredProds.length;i++){
+                brands[filteredProds[i].brand]=1   
             }
             
             
