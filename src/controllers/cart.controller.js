@@ -26,6 +26,16 @@ router.get("/:id", async (req,res)=>{
         return res.status(500).send(er.message);
     }
 })
+router.get("/delete/:id", async(req,res)=>{
+    try{
+        const cart = await Cart.findByIdAndDelete(req.params.id)
+        return res.redirect("/cart");
+
+    }
+    catch(er){
+        return res.status(500).send(er.message)
+    }
+})
 
 module.exports=router;
 
