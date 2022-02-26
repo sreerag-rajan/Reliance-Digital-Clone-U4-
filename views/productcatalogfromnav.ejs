@@ -1,19 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<%- include("_header", {title: category.name, cssLink: "/css/prodcatalogfromnav.css"}) %>
+<!-- <link rel="stylesheet" href="/css/header.css"> -->
 
-    <link rel="stylesheet" href="/css/prodcatalogfromnav.css">
-
-    <!-- <link rel="stylesheet" href="./styles/productCatalogBottom.css">
-    <link rel="stylesheet" href="./styles/footer.css">
-    <link rel="stylesheet" href="./styles/header.css"> -->
-    <title>Buy Smartphones Online at Best Prices</title>
-</head>
-<body>
-    <header></header>
     <div id="main">
         <div id="topCarasoul">
             <img id="carasolimg" src="https://www.reliancedigital.in/medias/Samsung-Galaxy-Z-Fold3-Flip3-5G-CLP-Banner-10-01-2022.jpg?context=bWFzdGVyfGltYWdlc3wxNjQxMjV8aW1hZ2UvanBlZ3xpbWFnZXMvaDFiL2g4NC85NzU0MDU2MTYzMzU4LmpwZ3xmMzk2ZWEzOWIwOTI2ODk1YjNiNzY1MGI2MDY5ZmJlODJmZTFlMGI4NjYwYjU1ZjE0OTg1YzczMTllYzhiMDk4" alt="">
@@ -21,7 +8,7 @@
         
         <!-- L1 Break -->
         <div id="showingPageName">
-            <a href="/index.html">
+            <a href="/">
                 <img src="https://www.pngkey.com/png/full/823-8236029_senior-care-icon-home-page-icon-grey.png" alt="">
             </a>
             <img src="https://www.freeiconspng.com/uploads/right-arrow-icon-27.png" alt="">
@@ -220,9 +207,7 @@
         
 
     </div>
-    <footer></footer>
-</body>
-</html>
+    <%- include("_footer") %>
 
 
 <script src="/js/prodcatalogfromnav.js"></script>

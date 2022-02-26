@@ -1,27 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title><%= searchTerm %></title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="/css/productFromSearch.css" />
-    <script
-      src="https://kit.fontawesome.com/ed7ed981e3.js"
-      crossorigin="anonymous"
-    ></script>
-  </head>
-  <body>
-    <header></header>
-
+<%- include("_header", {title: searchTerm, cssLink: "/css/productFromSearch.css"}) %>
     <main>
       <div id="main">
         <div id="slideshow">
@@ -39,7 +16,7 @@
         </div>
   
         <div id="navbar">
-          <a href="/index.html">
+          <a href="/">
             <img
               src="https://www.pngkey.com/png/full/823-8236029_senior-care-icon-home-page-icon-grey.png"
               alt=""
@@ -133,10 +110,7 @@
         </div>
       </div>
     </main>
-    
-   
-  </body>
-  </html>
+    <%- include("_footer") %>
   <script src="/js/productFromSearch.js"></script>
  
 
