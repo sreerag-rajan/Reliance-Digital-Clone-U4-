@@ -10,7 +10,14 @@
     <link rel="stylesheet" href="/css/cart.css">
 </head>
 <body>
-    <header></header>
+    <header>
+
+      <%- include("_header", {title: "Home", cssLink: "/css/index.css"}) %>
+
+
+    </header>
+
+
     <div id="main">
         <div id="left">
             <h3>My Cart (<span id="cartLength"><%=cart.length%></span>)</h3>
@@ -91,135 +98,155 @@
     
 
 
-    <footer></footer>
+    <footer>
+      <%- include("_footer", {title: "Home", cssLink: "../public/css/footer.css"}) %>
+    </footer>
 </body>
 </html>
 
-<script type="module">
-
-//     import {footer,header} from "./components/header_footer.js"
-//     let container=document.querySelector("header")
-//     container.innerHTML=header()
-//     let foot=document.querySelector("footer")
-//     foot.innerHTML=footer()
-
-//     import headerFunctionality from "./scripts/header.js"
-//     headerFunctionality();
-
-//     let items=JSON.parse(localStorage.getItem("relianceCart"))
-
-//  console.log(items)
-// let cartlength=document.querySelector("#cartLength")
-// cartlength.innerText=`${items.length} items`;
 
 
-// let totalAmount = 0
+<script>
 
-// function appendcart(items){
-//     let parent=document.getElementById("container");
-//     parent.innerHTML = "";
-//     items.map((el, index)=>{
-//         let div1=document.createElement("div")
-//         let div2=document.createElement("div")
-//         let div3=document.createElement("div")
-//         let img=document.createElement("img")
-        
-//         img.src=el.image
-//         // img.style.width="250px"
-//         let countDiv = document.createElement("div")
-//         countDiv.setAttribute("class","countDiv")
-//         let quantity = document.createElement("div");
-//         quantity.setAttribute("class","quantity");
-//         let prodquant = 1
-//         quantity.textContent = prodquant;
-//         let add = document.createElement("button")
-//         add.textContent = "+"
-//         add.addEventListener("click",()=>{
-//              prodquant++;
-//              quantity.textContent = prodquant;
-//              totalAmount += el.price; 
-//              showTotal()         
-//         })
-        
-        
-//         let sub = document.createElement("button")
-//         sub.addEventListener("click",()=>{
-//             if(prodquant>1){
-//                 prodquant--;
-//                 quantity.textContent = prodquant;
-//                 totalAmount -= el.price
-//                 showTotal() 
-//             } 
-                   
-//         })
-//         sub.textContent = "-";
-//         countDiv.append(sub,quantity,add);
-//         div1.append(img,countDiv)
-        
-//         let name=document.createElement("h3")
-//         name.innerHTML=el.name
-//         div2.append(name);
-//         let price=document.createElement("p")
-//         price.innerText=`₹${el.price}`
-//         let freeshipping=document.createElement("p")
-//         freeshipping.setAttribute("class","greentext")
-//         freeshipping.innerText="Free Shipping";
-//         let p=document.createElement("p")
-//         p.setAttribute("class","bluetext")
-//         p.innerText="*Delivery assurance is subject to our delivery locations staying open as per govt. regulations";
-//         div3.append(price, freeshipping, p);
-//         let topdiv = document.createElement("div");
-//         topdiv.setAttribute("class", "topDiv")
-//         topdiv.append(div1,div2,div3)
-        
-//         let btn=document.createElement("button")
-//         btn.innerHTML="Remove";
-//         btn.addEventListener("click",()=>{
-//             removeitem(index);
-//         })
-//         let btn2=document.createElement("button")
-//         btn2.innerHTML="Move to wishlist";
-//         btn2.addEventListener("click",()=>{
-//             removeitem(index);
-//         })
-//         let bottomdiv = document.createElement("div");
-//         bottomdiv.setAttribute("class","bottomDiv");
-//         bottomdiv.append(btn,btn2)
-//         let cartProdDiv = document.createElement("div");
-//         cartProdDiv.setAttribute("class","cartProdDiv");
-//         cartProdDiv.append(topdiv,bottomdiv)
-//         totalAmount += (el.price*prodquant)
-
-//         parent.append(cartProdDiv)
-
-//     })
-// }
-// appendcart(items)
-
-// function showTotal(){
-//     let amount=document.getElementById("totamount")
-//     amount.innerHTML=`<p>Amount Payable</p> <p>₹${totalAmount}</p>`
-
-// }
-// showTotal()
-
-// function removeitem(index){
-//     console.log("Remove")
-//             items.splice(index,1);
-//             localStorage.setItem("relianceCart",JSON.stringify(items));
-//             appendcart(items)
-// }
-
-// document.querySelector("#chkt").addEventListener("click",()=>{
-//     localStorage.setItem("totalAmount", JSON.stringify(totalAmount));
-//     window.location.href = "./payment.html"
-// })
-
-
-
-
-
-
-
+    import headerFunctionality from "./scripts/header.js"
+    headerFunctionality()
     
-</script>
+    
+    function openImg(){
+        var image = document.getElementById('getsrc');
+        var source = image.src;
+        window.open(source);
+    }
+    
+    
+    document.getElementById("buyNow").addEventListener("click", function() {
+        
+        let pin = document.querySelector("#pinCode").value
+        
+        
+        if(pin.length === 6){
+          let pincheck = document.getElementById('pinalert')
+          pincheck.style.display = 'none'
+          window.location.href = "cart.html"
+        }
+        else{
+          let pincheck = document.getElementById('pinalert')
+          pincheck.style.display = 'block'
+          
+        }
+      });
+    
+    
+    
+      
+    
+    
+    </script>
+
+<script>
+  
+
+    // let res = await fetch("http://127.0.0.1:3000/api/products/3");
+    
+    // let prod = await res.json();
+    // console.log(prod);
+    
+    // localStorage.setItem("try",JSON.stringify(prod))
+    
+    // let temp = JSON.parse(localStorage.getItem("try"))
+    
+    let check = JSON.parse(localStorage.getItem("selected_product"))
+    
+    let res = await fetch(`http://127.0.0.1:3000/api/products/${check}`);
+    let temp = await res.json();
+    
+    // let cart = JSON.parse(localStorage.getItem("relianceCart")) || []
+    //setting data in local storage for cart
+    var prodData={
+        name:temp.name,
+        image: temp.image,
+        price:temp.price
+    }
+    
+    document.getElementById("addtoCart").addEventListener("click", function() {
+        console.log("Yes");
+        // cart.push(prodData)
+        localStorage.setItem("relianceCart",JSON.stringify(prodData));
+        // window.location.href = "cart.html"
+        
+      });
+    
+    //Page Tiltle dynamic
+    document.title = 'Buy'+" "+temp.name
+    
+    //trial
+    
+    //trial
+    
+    //sectionbar names
+    let scbrand = document.getElementById('brandNamesc')
+    scbrand.innerText = temp.brand
+    let scname = document.getElementById('deviceNamesc')
+    scname.innerText = temp.name
+    
+    //Android device images
+    document.getElementById('myimage').src= temp.image
+    
+    //key feature details
+    let name = document.getElementById('deviceName')
+    name.innerText = temp.name
+    let price = document.getElementById('mainPrice')
+    price.innerText = temp.price
+    let display = document.getElementById('display')
+    display.innerText = temp.display
+    let camera = document.getElementById('camera')
+    camera.innerText = temp.camera
+    let processor = document.getElementById('processor')
+    processor.innerText = temp.processor
+    let ossystem = document.getElementById('ossystem')
+    ossystem.innerText = temp.ossystem 
+    
+    // Details under images
+    let processors = document.getElementById('processors')
+    processors.innerText = temp.processor
+    let ossystems = document.getElementById('ossystems')
+    ossystems.innerText = temp.ossystem 
+    let cameras = document.getElementById('cameras')
+    cameras.innerText = temp.camera
+    
+    //Detailed Specification starts
+    let color = document.getElementById('color')
+    color.innerText = temp.color
+    let brand = document.getElementById('brand')
+    brand.innerText = temp.brand
+    let memory = document.getElementById('memory')
+    memory.innerText = temp.memory
+    let processordet = document.getElementById('processordet')
+    processordet.innerText = temp.processor
+    let osdet = document.getElementById('osdet')
+    osdet.innerText = temp.ossystem 
+    let ram = document.getElementById('ram')
+    ram.innerText = temp.ram 
+    
+    
+    //code for changing mobile images on click
+    const allImage = document.querySelectorAll('.smallimgDiv div img')
+    
+    const imgContain = document.querySelector('.deviceimage');
+    
+    window.addEventListener('DOMContentLoaded', () => {
+        allImage[0].parentElement.classList.add('active');
+    })
+    
+    allImage.forEach((image) => {
+        image.addEventListener('click', () =>{
+            console.log(image.src)
+            imgContain.querySelector('img').src = image.src;
+        });
+    });
+    
+    
+        
+    
+    
+    </script>
