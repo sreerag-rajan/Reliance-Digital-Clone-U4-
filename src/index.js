@@ -1,15 +1,15 @@
-
 const path = require("path");
 
 const express = require("express");
+const cookieParser = require("cookie-parser");
 
-// const passport = require("./configs/google-oauth");
-// const { newToken } = require("./controllers/auth.controller");
+const passport = require("./configs/google-oauth");
+const { newToken } = require("./controllers/auth.controller");
 
 const app = express();
 
-
 app.use(express.json());
+app.use(cookieParser());
 
 const connect = require("./configs/db");
 const searchController = require("./controllers/search.controller");
@@ -19,9 +19,8 @@ const imagesController = require("./controllers/images.controller");
 
 const productrowController = require("./controllers/productrow.controller");
 
-// routes 
+// routes
 const cartcontroller = require("./controllers/cart.controller");
-
 
 app.use(express.static(path.join(__dirname, "../public")));
 app.use(express.json());
@@ -29,12 +28,12 @@ app.use(express.json());
 app.set("view engine", "ejs");
 
 const userController = require("./controllers/user.controller");
-const authController = require("./controllers/auth.controller");
+const { router: authController } = require("./controllers/auth.controller");
 
-app.get("",(req,res)=>{
+app.get("", (req, res) => {
   return res.render("index.ejs");
-})
-app.use("/search",searchController);
+});
+app.use("/search", searchController);
 
 app.use("/product", productController);
 app.use("/category", categoryController);
@@ -43,36 +42,35 @@ app.use("/productrow", productrowController);
 
 app.use("/cart", cartcontroller);
 
-app.use("/auth",authController)
+app.use("/auth", authController);
 
 app.use("/users", userController);
 
-// passport.serializeUser(function (user, done) {
-//   done(null, user);
-// });
+passport.serializeUser(function (user, done) {
+  done(null, user);
+});
 
-// passport.deserializeUser(function (user, done) {
-//   done(null, user);
-// });
+passport.deserializeUser(function (user, done) {
+  done(null, user);
+});
 
-// app.get(
-//   "/auth/google",
-//   passport.authenticate("google", { scope: ["email", "profile"] })
-// );
+app.get(
+  "/auth/google",
+  passport.authenticate("google", { scope: ["email", "profile"] })
+);
 
-// app.get(
-//   "/auth/google/callback",
-//   passport.authenticate("google", {
-//     failureRedirect: "/auth/google/failure",
-//   }),
-//   (req, res) => {
-//     const { user } = req;
-//     const token = newToken(user);
-
-
-//     return res.send({ user, token });
-//   }
-// );
+app.get(
+  "/auth/google/callback",
+  passport.authenticate("google", {
+    failureRedirect: "/auth/google/failure",
+  }),
+  (req, res) => {
+    const { user } = req;
+    const token = newToken(user);
+    res.cookie("Authorization", `Bearer ${token}`);
+    res.redirect("/cart");
+  }
+);
 
 app.listen(2345, async () => {
   try {
@@ -82,4 +80,3 @@ app.listen(2345, async () => {
     console.log(err.message);
   }
 });
-

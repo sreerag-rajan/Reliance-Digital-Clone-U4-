@@ -5,16 +5,15 @@ const User = require("../models/user.model");
 
 const router = express.Router();
 
-
 const newToken = (user) => {
   return jwt.sign({ user }, process.env.JWT_SECRET_KEY);
 };
 
 //crud function for register
 
-router.get("/register", (req,res)=>{
+router.get("/register", (req, res) => {
   return res.status(200).render("register.ejs");
-})
+});
 
 router.post("/register", async (req, res) => {
   console.log(req.body);
@@ -39,18 +38,18 @@ router.post("/register", async (req, res) => {
     // const token = newToken(user);
 
     // then return the user and the token
-    
+
     return res.status(200).redirect("/auth/login");
   } catch (err) {
-    console.log(err.message)
+    console.log(err.message);
     res.status(500).send(err.message);
   }
-}) 
+});
 //crud function for logi
 
-router.get("/login", (req,res)=>{
-  return res.render("signIn.ejs")
-})
+router.get("/login", (req, res) => {
+  return res.render("signIn.ejs");
+});
 
 router.post("/login", async (req, res) => {
   try {
@@ -81,4 +80,4 @@ router.post("/login", async (req, res) => {
   }
 });
 
-module.exports = router;
+module.exports = { router, newToken };

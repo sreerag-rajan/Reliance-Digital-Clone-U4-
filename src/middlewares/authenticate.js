@@ -1,8 +1,6 @@
 require("dotenv").config();
 const jwt = require("jsonwebtoken");
 
-
-
 const verifyToken = (token) => {
   return new Promise((resolve, reject) => {
     jwt.verify(token, process.env.JWT_SECRET_KEY, (err, user) => {
@@ -14,22 +12,22 @@ const verifyToken = (token) => {
 };
 
 module.exports = async (req, res, next) => {
-  // check if authorization header has been set
+  // check if authorization cookie has been set
   // if not throw an errors
-  if (!req.headers.authorization)
+  if (!req.cookies.Authorization)
     return res.status(400).send({
       message: "authorization token was not provided or was not valid",
     });
 
-  // if bearer token is in authorization header
+  // if bearer token is in authorization cookie
   // if not throw an error
-  if (!req.headers.authorization.startsWith("Bearer "))
+  if (!req.cookies.Authorization.startsWith("Bearer "))
     return res.status(400).send({
       message: "authorization token was not provided or was not valid",
     });
 
   // split the bearer token and get the [1] which is the token
-  const token = req.headers.authorization.split(" ")[1];
+  const token = req.cookies.Authorization.split(" ")[1];
 
   // then we will call jwt to verify the token
   let user;
