@@ -34,7 +34,7 @@ router.get("/:category", async(req, res)=>{
     try{
         
         const category = await Category.findOne({name:req.params.category}).lean().exec();
-        console.log(category)
+        // console.log(category)
         const images = await Images.find({category:category._id}).lean().exec()
 
         const prodrows = await Productrow.find({category:category._id}).populate({path:"products", select:["name","price","MRP","discount","main_img"]}).lean().exec()
@@ -43,7 +43,7 @@ router.get("/:category", async(req, res)=>{
             images,
             prodrows
         }
-        console.log(images);
+        // console.log(images);
         return res.status(201).render("productcatalogfromnav.ejs",content);
 
 
