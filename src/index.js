@@ -72,10 +72,10 @@ app.get(
   }
 );
 
-app.listen(2345, async () => {
+app.listen(process.env.PORT || 3000, async () => {
   try {
     await connect();
-    console.log("listening on port 2345");
+    console.log("listening on port 3000");
   } catch (err) {
     console.log(err.message);
   }
