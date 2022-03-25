@@ -5,6 +5,8 @@ The objective of the project was to add a backend to the already existing projec
 
 This project was built by 6 members in a span of 5 days
 
+![landing page](https://miro.medium.com/max/875/1*qRNfRbuHCDC1ct0chLZoWA.png)
+
 ## Techstack
 - EJS
 - Node JS
