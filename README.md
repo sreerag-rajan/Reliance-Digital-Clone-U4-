@@ -27,3 +27,11 @@ This project was built by 6 members in a span of 5 days
 
 ## License
 ISC
+
+## Getting Started
+
+Clone the repository and run
+
+`npm install`
+
+`npm start`
